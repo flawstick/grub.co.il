@@ -8,7 +8,7 @@ export default function TermsOfService() {
       <div className="prose dark:prose-invert max-w-none">
         <p>Last updated: {new Date().toLocaleDateString()}</p>
         <p>Please read these Terms of Service ("Terms", "Terms of Service") carefully before using the Grub website and service operated by Grub, Inc.</p>
-        
+
         <h2>1. Agreement to Terms</h2>
         <p>By accessing or using our Service, you agree to be bound by these Terms. If you disagree with any part of the terms, then you may not access the Service.</p>
 

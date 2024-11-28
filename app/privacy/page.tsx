@@ -8,7 +8,7 @@ export default function PrivacyPolicy() {
       <div className="prose dark:prose-invert max-w-none">
         <p>Last updated: {new Date().toLocaleDateString()}</p>
         <p>At Grub, we take your privacy seriously. This Privacy Policy describes how we collect, use, and share your personal information when you use our services.</p>
-        
+
         <h2>Information We Collect</h2>
         <p>We collect information you provide directly to us, such as when you create an account, place an order, or contact us for support. This may include:</p>
         <ul>
