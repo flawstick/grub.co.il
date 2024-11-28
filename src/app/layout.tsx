@@ -1,21 +1,23 @@
-import './globals.css'
-import { Fredoka } from 'next/font/google'
-import { ThemeProvider } from "@/components/theme-provider"
-import { Navigation } from '@/components/navigation'
-import { Footer } from '@/components/footer'
-import { Toaster } from "@/components/ui/toaster"
+import "./globals.css";
+import { Fredoka } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
+import { Toaster } from "@/components/ui/toaster";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const fredoka = Fredoka({ subsets: ['latin'] })
+const fredoka = Fredoka({ subsets: ["latin"] });
 
 export const metadata = {
-  title: 'Grub - Streamline Meal Management for Your Team',
-  description: 'Effortless meal ordering, salary deductions, and restaurant partnerships—powered by Grub.',
-}
+  title: "Grub - Streamline Meal Management for Your Team",
+  description:
+    "Effortless meal ordering, salary deductions, and restaurant partnerships—powered by Grub.",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -28,8 +30,8 @@ export default function RootLayout({
           </div>
           <Toaster />
         </ThemeProvider>
+        <SpeedInsights />
       </body>
     </html>
-  )
+  );
 }
-
