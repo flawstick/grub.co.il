@@ -11,14 +11,14 @@ import Image from "next/image";
 const founders = [
   {
     name: "Amir Isaac",
-    role: "CO-Founder and CEO",
+    role: "Co-founder and CEO",
     bio: "Amir brings over 15 years of experience in the tech industry, with a passion for revolutionizing corporate dining experiences.",
     image: "/placeholder.svg?height=300&width=300",
     href: "/about/amir-isaac",
   },
   {
     name: "George Hayek",
-    role: "CO-Founder",
+    role: "Co-founder",
     bio: "George has a background in restaurant management and tech entrepreneurship, bringing a unique perspective to Grub's mission.",
     image: "/placeholder.svg?height=300&width=300",
     href: "/about/george-hayek",
