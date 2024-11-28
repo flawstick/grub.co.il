@@ -1,5 +1,6 @@
-import { Button } from "@/components/ui/button"
-import { ImageCarousel } from "@/components/image-carousel"
+import { Button } from "@/components/ui/button";
+import { ImageCarousel } from "@/components/image-carousel";
+import Link from "next/link";
 
 export const AboutSection = () => {
   return (
@@ -7,9 +8,13 @@ export const AboutSection = () => {
       <div className="container px-4 md:px-6 mx-auto">
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
           <div className="space-y-4">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-[#FD8000] dark:text-[#FFA500]">About Grub</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-[#FD8000] dark:text-[#FFA500]">
+              About Grub
+            </h2>
             <p className="text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Grub is revolutionizing corporate dining with our innovative meal management platform. We connect businesses, employees, and local restaurants to create a seamless and delightful dining experience.
+              Grub is revolutionizing corporate dining with our innovative meal
+              management platform. We connect businesses, employees, and local
+              restaurants to create a seamless and delightful dining experience.
             </p>
             <ul className="space-y-2 text-gray-500 dark:text-gray-400">
               <li className="flex items-center">
@@ -20,7 +25,12 @@ export const AboutSection = () => {
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
                 </svg>
                 Streamlined meal ordering for teams
               </li>
@@ -32,7 +42,12 @@ export const AboutSection = () => {
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
                 </svg>
                 Integrated payroll deductions
               </li>
@@ -44,14 +59,26 @@ export const AboutSection = () => {
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
                 </svg>
                 Partnerships with local restaurants
               </li>
             </ul>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Button className="bg-[#FD8000] hover:bg-[#FFA500] text-white">Learn More</Button>
-              <Button variant="outline">Contact Us</Button>
+              <Button
+                asChild
+                className="bg-[#FD8000] hover:bg-[#FFA500] text-white"
+              >
+                <Link href="/about">Learn More</Link>
+              </Button>
+              <Button asChild variant="outline">
+                <Link href="/contact">Contact Us</Link>
+              </Button>
             </div>
           </div>
           <div className="lg:order-last">
@@ -60,6 +87,5 @@ export const AboutSection = () => {
         </div>
       </div>
     </section>
-  )
-}
-
+  );
+};

@@ -11,14 +11,14 @@ import Image from "next/image";
 const founders = [
   {
     name: "Amir Isaac",
-    role: "Co-founder and CEO",
+    role: "CO-Founder and CEO",
     bio: "Amir brings over 15 years of experience in the tech industry, with a passion for revolutionizing corporate dining experiences.",
     image: "/placeholder.svg?height=300&width=300",
     href: "/about/amir-isaac",
   },
   {
     name: "George Hayek",
-    role: "Co-founder",
+    role: "CO-Founder",
     bio: "George has a background in restaurant management and tech entrepreneurship, bringing a unique perspective to Grub's mission.",
     image: "/placeholder.svg?height=300&width=300",
     href: "/about/george-hayek",
@@ -161,7 +161,7 @@ export default function AboutPage() {
         <h2 className="text-3xl font-semibold mb-6 text-center text-[#FD8000] dark:text-[#FFA500]">
           About the Owners
         </h2>
-        <div className="grid md:grid-cols-2 gap-8 justify-center">
+        <div className="grid md:grid-cols-2 gap-8 justify-center max-w-4xl mx-auto">
           {founders.map((founder, index) => (
             <Link href={founder.href} key={index} className="max-w-md mx-auto">
               <motion.div
@@ -211,44 +211,24 @@ export default function AboutPage() {
       </motion.div>
 
       <motion.div
-        className="text-center"
+        className="flex flex-col md:flex-row items-center justify-between gap-8"
         variants={fadeIn}
         initial="initial"
         animate="animate"
       >
-        <div className="relative inline-block">
-          <svg
-            className="absolute inset-0 w-full h-full"
-            viewBox="0 0 200 60"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <defs>
-              <linearGradient
-                id="buttonGradient"
-                x1="0%"
-                y1="0%"
-                x2="100%"
-                y2="0%"
-              >
-                <stop offset="0%" stopColor="#FD8000" />
-                <stop offset="100%" stopColor="#FFA500" />
-              </linearGradient>
-            </defs>
-            <path
-              d="M20,0 Q0,0 0,20 L0,40 Q0,60 20,60 L180,60 Q200,60 200,40 L200,20 Q200,0 180,0 Z"
-              fill="url(#buttonGradient)"
-            />
-            <path
-              d="M15,5 Q5,5 5,15 L5,45 Q5,55 15,55 L185,55 Q195,55 195,45 L195,15 Q195,5 185,5 Z"
-              fill="none"
-              stroke="white"
-              strokeWidth="2"
-              opacity="0.5"
-            />
-          </svg>
+        <div className="md:w-1/2">
+          <Image
+            src="/illustration.svg"
+            alt="Join Grub Illustration"
+            width={500}
+            height={300}
+            className="w-full h-auto"
+          />
+        </div>
+        <div className="md:w-1/2 flex justify-end">
           <Button
             asChild
-            className="relative z-10 bg-transparent hover:bg-transparent text-white text-lg px-8 py-3 rounded-full transition-all duration-300 transform hover:-translate-y-1"
+            className="bg-gradient-to-r from-[#FD8000] to-[#FFA500] hover:from-[#FD8000]/90 hover:to-[#FFA500]/90 text-white text-lg px-8 py-3 rounded-full transition-all duration-300 transform hover:-translate-y-1"
           >
             <Link
               href="/book-demo"

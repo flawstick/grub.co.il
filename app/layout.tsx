@@ -6,7 +6,11 @@ import { Footer } from "@/components/footer";
 import { Toaster } from "@/components/ui/toaster";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const fredoka = Fredoka({ subsets: ["latin"] });
+const fredoka = Fredoka({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-fredoka",
+});
 
 export const metadata = {
   title: "Grub - Streamline Meal Management for Your Team",
@@ -21,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={fredoka.className}>
+      <body className={fredoka.variable}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <div className="flex flex-col min-h-screen">
             <Navigation />
