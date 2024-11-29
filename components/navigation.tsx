@@ -30,6 +30,7 @@ import {
   Store,
   Mail,
 } from "lucide-react";
+import { GrubIcon } from "./icons";
 
 export function Navigation() {
   const pathname = usePathname();
@@ -63,6 +64,7 @@ export function Navigation() {
     >
       <div className="flex h-16 items-center px-4">
         <Link href="/" className="mr-6 flex items-center space-x-2">
+          <GrubIcon size={36} />
           <span className="text-2xl font-bold text-[#FD8000] dark:text-[#FFA500]">
             Grub
           </span>

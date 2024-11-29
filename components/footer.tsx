@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Utensils } from "lucide-react";
+import { GrubIcon } from "./icons";
 
 export function Footer() {
   return (
@@ -7,7 +7,7 @@ export function Footer() {
       <div className="container mx-auto px-4 py-8 md:py-12">
         <div className="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
           <div className="flex items-center space-x-2">
-            <Utensils className="h-8 w-8 text-[#FD8000]" />
+            <GrubIcon size={48} />
             <span className="text-2xl font-bold text-[#FD8000]">Grub</span>
           </div>
           <nav className="flex flex-wrap justify-center items-center gap-6 text-base">
@@ -58,8 +58,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 text-center text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} Aion Arete Israel Ltd. All rights
-          reserved.
+          &copy; {new Date().getFullYear()} Grub Inc. All rights reserved.
         </div>
       </div>
     </footer>
