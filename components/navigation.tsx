@@ -42,7 +42,9 @@ export function Navigation() {
       const currentScrollY = window.scrollY;
 
       if (currentScrollY > lastScrollY) {
-        setIsVisible(false);
+        if (currentScrollY - lastScrollY > 16) {
+          setIsVisible(false);
+        }
       } else {
         setIsVisible(true);
       }
