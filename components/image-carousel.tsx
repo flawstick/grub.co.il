@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const images = [
-  "https://cdn.discordapp.com/attachments/1009226898011852801/1312420212666273792/iPhone_15_Pro_Max_Mockup_Front_View.png?ex=674c6e12&is=674b1c92&hm=c2339cb50ac06f6c819af37aa5f7f2739c3b5cd7159e8061c931f4e0b6c98d7f&",
+  "/placeholder.svg?height=400&width=600",
   "/placeholder.svg?height=400&width=600",
   "/placeholder.svg?height=400&width=600",
   "/placeholder.svg?height=400&width=600",
