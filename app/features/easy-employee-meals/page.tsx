@@ -52,9 +52,6 @@ export default function EasyEmployeeMealsPage() {
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#FD8000] dark:text-[#FFA500]">
                 Easy Employee Meals
               </h1>
-              <div className="flex items-center justify-center mb-8">
-                <Utensils className="h-16 w-16 text-[#FD8000] dark:text-[#FFA500]" />
-              </div>
               <p className="text-xl mb-8 text-gray-600 dark:text-gray-300">
                 Simplify meal ordering for your entire team with our intuitive
                 platform. Grub makes it easy for employees to browse menus,

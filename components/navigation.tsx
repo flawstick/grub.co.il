@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { MobileNav } from "@/components/mobile-nav";
 import {
   ExternalLink,
   Utensils,
@@ -42,9 +43,7 @@ export function Navigation() {
       const currentScrollY = window.scrollY;
 
       if (currentScrollY > lastScrollY) {
-        if (currentScrollY - lastScrollY > 16) {
-          setIsVisible(false);
-        }
+        setIsVisible(false);
       } else {
         setIsVisible(true);
       }
@@ -65,13 +64,14 @@ export function Navigation() {
       )}
     >
       <div className="flex h-16 items-center px-4">
+        <MobileNav />
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <GrubIcon size={36} />
           <span className="text-2xl font-bold text-[#FD8000] dark:text-[#FFA500]">
             Grub
           </span>
         </Link>
-        <NavigationMenu>
+        <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
             <NavigationMenuItem>
               <Link href="/about" legacyBehavior passHref>
@@ -196,7 +196,11 @@ export function Navigation() {
         </NavigationMenu>
         <div className="ml-auto flex items-center space-x-4">
           <ThemeToggle />
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="hidden md:block"
+          >
             <Button
               asChild
               className="bg-gradient-to-r from-[#FD8000] to-[#FFA500] hover:from-[#FD8000]/90 hover:to-[#FFA500]/90 text-white"
