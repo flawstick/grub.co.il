@@ -50,7 +50,7 @@ export default function GeorgeHayekPage() {
           <div className="md:col-span-3">
             <motion.section id="introduction" {...fadeIn}>
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center text-[#FD8000] dark:text-[#FFA500]">
-                George Hayek
+                George Daniel Hayek
               </h1>
               <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-center text-gray-600 dark:text-gray-300">
                 CO-Founder
@@ -59,17 +59,17 @@ export default function GeorgeHayekPage() {
                 <div className="relative w-64 h-64 rounded-full overflow-hidden">
                   <Image
                     src="/placeholder.svg?height=300&width=300"
-                    alt="George Hayek"
+                    alt="George Daniel Hayek"
                     layout="fill"
                     objectFit="cover"
                   />
                 </div>
               </div>
               <p className="text-xl mb-8 text-center max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
-                George Hayek brings a unique blend of restaurant management
-                expertise and tech entrepreneurship to Grub. As a CO-Founder,
-                George plays a crucial role in shaping Grub's strategy and
-                operations.
+                George Daniel Hayek brings a unique blend of restaurant
+                management expertise and tech entrepreneurship to Grub. As a
+                CO-Founder, George plays a crucial role in shaping Grub's
+                strategy and operations.
               </p>
             </motion.section>
 

@@ -17,7 +17,7 @@ const founders = [
     href: "/about/amir-isaac",
   },
   {
-    name: "George Hayek",
+    name: "George Daniel Hayek",
     role: "CO-Founder",
     bio: "George has a background in restaurant management and tech entrepreneurship, bringing a unique perspective to Grub's mission.",
     image: "/placeholder.svg?height=300&width=300",
