@@ -86,12 +86,12 @@ const navItems = [
       { title: "Download App", href: "/download", icon: Download },
       {
         title: "Company Console",
-        href: "https://company.grubapp.co/",
+        href: "https://company.grub.co.il/",
         icon: LayoutDashboard,
       },
       {
         title: "Restaurant Console",
-        href: "https://restaurant.grubapp.co/",
+        href: "https://restaurant.grub.co.il/",
         icon: Store,
       },
       { title: "Contact", href: "/contact", icon: Mail },

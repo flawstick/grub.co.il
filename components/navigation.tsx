@@ -160,14 +160,14 @@ export function Navigation() {
                     Get the Grub app for iOS and Android devices.
                   </ListItem>
                   <ListItem
-                    href="https://company.grubapp.co/"
+                    href="https://company.grub.co.il/"
                     title="Company Console"
                     icon={LayoutDashboard}
                   >
                     Manage your company's meal program and employee accounts.
                   </ListItem>
                   <ListItem
-                    href="https://restaurant.grubapp.co/"
+                    href="https://restaurant.grub.co.il/"
                     title="Restaurant Console"
                     icon={Store}
                   >
