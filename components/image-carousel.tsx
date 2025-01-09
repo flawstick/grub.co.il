@@ -5,12 +5,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const images = [
-  "/placeholder.svg?height=400&width=600",
-  "/placeholder.svg?height=400&width=600",
-  "/placeholder.svg?height=400&width=600",
-  "/placeholder.svg?height=400&width=600",
-];
+const images = ["/img2.jpg", "/img1.jpg", "/img3.png"];
 
 export const ImageCarousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });

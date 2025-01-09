@@ -89,7 +89,7 @@ export default function AboutPage() {
           transition={{ duration: 0.3 }}
         >
           <Image
-            src="/placeholder.svg?height=400&width=600"
+            src="/img3.png"
             alt="Grub in action"
             width={600}
             height={400}
