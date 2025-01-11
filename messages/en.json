@@ -1,0 +1,12 @@
+{
+  "HomePage": {
+    "title": "Hello world!",
+    "about": "Go to the about page"
+  },
+  "meta": {
+    "title": "Grub – Streamline Team Meal Management",
+    "description": "Effortless meal ordering, salary deductions, and restaurant partnerships—powered by Grub.",
+    "keywords": "team meals, meal management, corporate meals, grub",
+    "ogImage": "/images/og-image-en.jpg"
+  }
+}

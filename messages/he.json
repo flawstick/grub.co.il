@@ -1,0 +1,12 @@
+{
+  "HomePage": {
+    "title": "Hello world!",
+    "about": "Go to the about page"
+  },
+  "meta": {
+    "title": "גרב – ניהול ארוחות יעיל לצוות",
+    "description": "הזמנת ארוחות בקלות, ניכויים מהשכר, ושיתופי פעולה עם מסעדות – הכל בעזרת Grub.",
+    "keywords": "ארוחות לעובדים, ניהול ארוחות, חברתיות, גרב",
+    "ogImage": "/images/og-image-he.jpg"
+  }
+}
