@@ -264,6 +264,7 @@ export default function BookDemo() {
               >
                 <Tabs
                   defaultValue="on-location"
+                  dir={dir as "ltr" | "rtl"}
                   onValueChange={(value) =>
                     setFormData({ ...formData, meetingType: value })
                   }

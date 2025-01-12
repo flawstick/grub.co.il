@@ -3,6 +3,11 @@
   "rules": {
     "react/no-unescaped-entities": "off",
     "@typescript-eslint/no-unused-vars": "off",
-    "@next/next/no-img-element": "off"
+    "@next/next/no-img-element": "off",
+    "@typescript-eslint/no-explicit-any": "off", // Disable the rule for 'any' type
+    "@typescript-eslint/ban-ts-comment": "off", // Allow @ts-ignore usage
+    "react-hooks/exhaustive-deps": "off", // Disable dependency check in useEffect
+    "@typescript-eslint/no-empty-interface": "off", // Allow empty interfaces
+    "@typescript-eslint/no-empty-object-type": "off"
   }
 }

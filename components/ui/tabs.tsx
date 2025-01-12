@@ -44,10 +44,6 @@ const TabsContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <TabsPrimitive.Content
     ref={ref}
-    dir={(() => {
-      const { direction } = useDirection();
-      return direction as "string";
-    })()}
     className={cn(
       "mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
       "rtl:text-right",

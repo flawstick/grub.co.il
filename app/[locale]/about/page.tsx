@@ -122,7 +122,7 @@ export default function AboutPage() {
       </motion.div>
 
       {/* About the Owners */}
-      <motion.div
+      {/* <motion.div
         className="mb-16"
         variants={fadeIn}
         initial="initial"
@@ -166,7 +166,7 @@ export default function AboutPage() {
             </Link>
           ))}
         </div>
-      </motion.div>
+      </motion.div>*/}
       <FAQAccordion />
     </div>
   );
