@@ -63,6 +63,7 @@
     "styled-jsx": "latest",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
+    "tailwindcss-rtl": "^0.9.0",
     "vaul": "^1.1.1",
     "zod": "^3.23.8"
   },

@@ -11,53 +11,50 @@ import {
   Clock,
   ChefHat,
 } from "lucide-react";
-
-const features = [
-  {
-    icon: Utensils,
-    title: "Easy Employee Meals",
-    description:
-      "Simplify meal ordering for your entire team with our intuitive platform.",
-    href: "/features/easy-employee-meals",
-  },
-  {
-    icon: Building,
-    title: "Low Restaurant Fees",
-    description:
-      "Partner with local restaurants to offer a wide variety of meal options at competitive prices.",
-    href: "/features/low-restaurant-fees",
-  },
-  {
-    icon: CreditCard,
-    title: "Integrated Payroll Deductions",
-    description:
-      "Seamlessly deduct meal costs from employee salaries for hassle-free accounting.",
-    href: "/features/integrated-payroll-deductions",
-  },
-  {
-    icon: Users,
-    title: "Team Management",
-    description:
-      "Easily manage teams, departments, and individual meal preferences all in one place.",
-    href: "/features/team-management",
-  },
-  {
-    icon: Clock,
-    title: "Scheduled Orders",
-    description:
-      "Set up recurring orders for your team to streamline the meal planning process.",
-    href: "/features/scheduled-orders",
-  },
-  {
-    icon: ChefHat,
-    title: "Customizable Menus",
-    description:
-      "Work with partner restaurants to create custom menus tailored to your team's preferences.",
-    href: "/features/customizable-menus",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export const FeaturesSection = () => {
+  const t = useTranslations("FeaturesSection");
+
+  const features = [
+    {
+      icon: Utensils,
+      title: t("easyEmployeeMeals.title"),
+      description: t("easyEmployeeMeals.description"),
+      href: "/features/easy-employee-meals",
+    },
+    {
+      icon: Building,
+      title: t("lowRestaurantFees.title"),
+      description: t("lowRestaurantFees.description"),
+      href: "/features/low-restaurant-fees",
+    },
+    {
+      icon: CreditCard,
+      title: t("integratedPayrollDeductions.title"),
+      description: t("integratedPayrollDeductions.description"),
+      href: "/features/integrated-payroll-deductions",
+    },
+    {
+      icon: Users,
+      title: t("teamManagement.title"),
+      description: t("teamManagement.description"),
+      href: "/features/team-management",
+    },
+    {
+      icon: Clock,
+      title: t("scheduledOrders.title"),
+      description: t("scheduledOrders.description"),
+      href: "/features/scheduled-orders",
+    },
+    {
+      icon: ChefHat,
+      title: t("customizableMenus.title"),
+      description: t("customizableMenus.description"),
+      href: "/features/customizable-menus",
+    },
+  ];
+
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-[#FFA500]/10 to-[#FD8000]/10 dark:from-[#FFA500]/5 dark:to-[#FD8000]/5">
       <div className="container mx-auto px-4">
@@ -67,7 +64,7 @@ export const FeaturesSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Features
+          {t("title")}
         </motion.h2>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (

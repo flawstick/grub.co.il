@@ -32,11 +32,16 @@ import {
   Mail,
 } from "lucide-react";
 import { GrubIcon } from "./icons";
+import { LocaleSwitcher } from "./locale-select";
+import { useTranslations } from "next-intl";
+import { useDirection } from "@/hooks/use-direction";
 
 export function Navigation() {
+  const t = useTranslations("Navigation");
   const pathname = usePathname();
   const [isVisible, setIsVisible] = React.useState(true);
   const [lastScrollY, setLastScrollY] = React.useState(0);
+  const { direction } = useDirection();
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -65,13 +70,13 @@ export function Navigation() {
     >
       <div className="flex h-16 items-center px-4">
         <MobileNav />
-        <Link href="/" className="mr-6 flex items-center space-x-2">
+        <Link href="/" className="ltr:mr-6 rtl:ml-6 flex items-center gap-x-2">
           <GrubIcon size={36} />
           <span className="text-2xl font-bold text-[#FD8000] dark:text-[#FFA500]">
-            Grub
+            {t("grub")}
           </span>
         </Link>
-        <NavigationMenu className="hidden md:flex">
+        <NavigationMenu className="hidden md:flex" dir={direction}>
           <NavigationMenuList>
             <NavigationMenuItem>
               <Link href="/about" legacyBehavior passHref>
@@ -81,7 +86,7 @@ export function Navigation() {
                     pathname === "/about" && "bg-accent text-accent-foreground",
                   )}
                 >
-                  About
+                  {t("about")}
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
@@ -92,51 +97,51 @@ export function Navigation() {
                     "bg-accent text-accent-foreground",
                 )}
               >
-                Features
+                {t("features.title")}
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid gap-3 p-6 md:w-[500px] lg:w-[600px] grid-cols-2 grid-rows-3">
                   <ListItem
                     href="/features/easy-employee-meals"
-                    title="Easy Employee Meals"
+                    title={t("features.easyEmployeeMeals")}
                     icon={Utensils}
                   >
-                    Simplify meal ordering for your entire team.
+                    {t("features.easyEmployeeMealsDescription")}
                   </ListItem>
                   <ListItem
                     href="/features/low-restaurant-fees"
-                    title="Low Restaurant Fees"
+                    title={t("features.lowRestaurantFees")}
                     icon={Building}
                   >
-                    Partner with local restaurants at competitive prices.
+                    {t("features.lowRestaurantFeesDescription")}
                   </ListItem>
                   <ListItem
                     href="/features/integrated-payroll-deductions"
-                    title="Integrated Payroll"
+                    title={t("features.integratedPayroll")}
                     icon={CreditCard}
                   >
-                    Seamless payroll deductions for meals.
+                    {t("features.integratedPayrollDescription")}
                   </ListItem>
                   <ListItem
                     href="/features/team-management"
-                    title="Team Management"
+                    title={t("features.teamManagement")}
                     icon={Users}
                   >
-                    Manage teams and meal preferences easily.
+                    {t("features.teamManagementDescription")}
                   </ListItem>
                   <ListItem
                     href="/features/scheduled-orders"
-                    title="Scheduled Orders"
+                    title={t("features.scheduledOrders")}
                     icon={Clock}
                   >
-                    Set up recurring orders for your team.
+                    {t("features.scheduledOrdersDescription")}
                   </ListItem>
                   <ListItem
                     href="/features/customizable-menus"
-                    title="Customizable Menus"
+                    title={t("features.customizableMenus")}
                     icon={ChefHat}
                   >
-                    Create custom menus for your team.
+                    {t("features.customizableMenusDescription")}
                   </ListItem>
                 </ul>
               </NavigationMenuContent>
@@ -148,33 +153,37 @@ export function Navigation() {
                     "bg-accent text-accent-foreground",
                 )}
               >
-                Resources
+                {t("resources.title")}
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid gap-3 p-6 md:w-[500px] lg:w-[600px] grid-cols-2 grid-rows-2">
                   <ListItem
                     href="/download"
-                    title="Download App"
+                    title={t("resources.downloadApp")}
                     icon={Download}
                   >
-                    Get the Grub app for iOS and Android devices.
+                    {t("resources.downloadAppDescription")}
                   </ListItem>
                   <ListItem
                     href="https://company.grub.co.il/"
-                    title="Company Console"
+                    title={t("resources.companyConsole")}
                     icon={LayoutDashboard}
                   >
-                    Manage your company's meal program and employee accounts.
+                    {t("resources.companyConsoleDescription")}
                   </ListItem>
                   <ListItem
                     href="https://restaurant.grub.co.il/"
-                    title="Restaurant Console"
+                    title={t("resources.restaurantConsole")}
                     icon={Store}
                   >
-                    For restaurant partners to manage menus and orders.
+                    {t("resources.restaurantConsoleDescription")}
                   </ListItem>
-                  <ListItem href="/contact" title="Contact" icon={Mail}>
-                    Get in touch with our support team for assistance.
+                  <ListItem
+                    href="/contact"
+                    title={t("resources.contact")}
+                    icon={Mail}
+                  >
+                    {t("resources.contactDescription")}
                   </ListItem>
                 </ul>
               </NavigationMenuContent>
@@ -188,14 +197,15 @@ export function Navigation() {
                       "bg-accent text-accent-foreground",
                   )}
                 >
-                  Testimonials
+                  {t("testimonials")}
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-        <div className="ml-auto flex items-center space-x-4">
-          <ThemeToggle />
+        <div className="ltr:ml-auto rtl:mr-auto flex items-center gap-x-2">
+          <ThemeToggle className="hidden md:flex" />
+          <LocaleSwitcher />
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -205,7 +215,7 @@ export function Navigation() {
               asChild
               className="bg-gradient-to-r from-[#FD8000] to-[#FFA500] hover:from-[#FD8000]/90 hover:to-[#FFA500]/90 text-white"
             >
-              <Link href="/book-demo">Book a Demo</Link>
+              <Link href="/book-demo">{t("bookDemo")}</Link>
             </Button>
           </motion.div>
         </div>
@@ -230,10 +240,12 @@ const ListItem = React.forwardRef<
           {...props}
         >
           <div className="text-sm font-medium leading-none flex items-center mb-2">
-            {Icon && <Icon className="mr-2 h-5 w-5 text-[#FD8000]" />}
+            {Icon && (
+              <Icon className="ltr:mr-2 rtl:ml-2 h-5 w-5 text-[#FD8000]" />
+            )}
             {title}
             {props.href?.startsWith("http") && (
-              <ExternalLink className="inline-block w-3 h-3 ml-1" />
+              <ExternalLink className="inline-block w-3 h-3 ltr:ml-1 rtl:mr-1 rtl:rotate-[270deg]" />
             )}
           </div>
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">

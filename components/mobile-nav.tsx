@@ -38,73 +38,80 @@ import {
 } from "@/components/ui/collapsible";
 import { useState, useEffect } from "react";
 import { GrubIcon } from "./icons";
-
-const navItems = [
-  { title: "About", href: "/about", icon: Info },
-  {
-    title: "Features",
-    href: "/features",
-    icon: Star,
-    subItems: [
-      {
-        title: "Easy Employee Meals",
-        href: "/features/easy-employee-meals",
-        icon: Utensils,
-      },
-      {
-        title: "Low Restaurant Fees",
-        href: "/features/low-restaurant-fees",
-        icon: Building,
-      },
-      {
-        title: "Integrated Payroll",
-        href: "/features/integrated-payroll-deductions",
-        icon: CreditCard,
-      },
-      {
-        title: "Team Management",
-        href: "/features/team-management",
-        icon: Users,
-      },
-      {
-        title: "Scheduled Orders",
-        href: "/features/scheduled-orders",
-        icon: Clock,
-      },
-      {
-        title: "Customizable Menus",
-        href: "/features/customizable-menus",
-        icon: ChefHat,
-      },
-    ],
-  },
-  {
-    title: "Resources",
-    href: "/resources",
-    icon: LayoutDashboard,
-    subItems: [
-      { title: "Download App", href: "/download", icon: Download },
-      {
-        title: "Company Console",
-        href: "https://company.grub.co.il/",
-        icon: LayoutDashboard,
-      },
-      {
-        title: "Restaurant Console",
-        href: "https://restaurant.grub.co.il/",
-        icon: Store,
-      },
-      { title: "Contact", href: "/contact", icon: Mail },
-    ],
-  },
-  { title: "Testimonials", href: "/testimonials", icon: Star },
-  { title: "Book a Demo", href: "/book-demo", icon: Calendar },
-];
+import { useTranslations } from "next-intl";
+import { useDirection } from "@/hooks/use-direction";
 
 export function MobileNav() {
+  const t = useTranslations("MobileNav");
   const [open, setOpen] = useState(false);
   const [openItems, setOpenItems] = useState<Record<string, boolean>>({});
-  const pathname = usePathname();
+  const { direction } = useDirection();
+
+  const navItems = [
+    { title: t("about"), href: "/about", icon: Info },
+    {
+      title: t("features.title"),
+      href: "/features",
+      icon: Star,
+      subItems: [
+        {
+          title: t("features.easyEmployeeMeals"),
+          href: "/features/easy-employee-meals",
+          icon: Utensils,
+        },
+        {
+          title: t("features.lowRestaurantFees"),
+          href: "/features/low-restaurant-fees",
+          icon: Building,
+        },
+        {
+          title: t("features.integratedPayroll"),
+          href: "/features/integrated-payroll-deductions",
+          icon: CreditCard,
+        },
+        {
+          title: t("features.teamManagement"),
+          href: "/features/team-management",
+          icon: Users,
+        },
+        {
+          title: t("features.scheduledOrders"),
+          href: "/features/scheduled-orders",
+          icon: Clock,
+        },
+        {
+          title: t("features.customizableMenus"),
+          href: "/features/customizable-menus",
+          icon: ChefHat,
+        },
+      ],
+    },
+    {
+      title: t("resources.title"),
+      href: "/resources",
+      icon: LayoutDashboard,
+      subItems: [
+        {
+          title: t("resources.downloadApp"),
+          href: "/download",
+          icon: Download,
+        },
+        {
+          title: t("resources.companyConsole"),
+          href: "https://company.grub.co.il/",
+          icon: LayoutDashboard,
+        },
+        {
+          title: t("resources.restaurantConsole"),
+          href: "https://restaurant.grub.co.il/",
+          icon: Store,
+        },
+        { title: t("resources.contact"), href: "/contact", icon: Mail },
+      ],
+    },
+    { title: t("testimonials"), href: "/testimonials", icon: Star },
+    { title: t("bookDemo"), href: "/book-demo", icon: Calendar },
+  ];
 
   useEffect(() => {
     const initialOpenState = navItems.reduce(
@@ -119,7 +126,6 @@ export function MobileNav() {
     setOpenItems(initialOpenState);
   }, []);
 
-  // intersection observer for the sheet header
   const headerRef = React.useRef<HTMLDivElement>(null);
   const [isIntersecting, setIsIntersecting] = useState(false);
   useEffect(() => {
@@ -138,13 +144,17 @@ export function MobileNav() {
       <SheetTrigger asChild>
         <Button
           variant="ghost"
-          className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
+          className="ltr:mr-2 rtl:ml-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
         >
           <Menu style={{ width: "1.5rem", height: "1.5rem" }} />
         </Button>
       </SheetTrigger>
       <SheetTitle />
-      <SheetContent side="left" className="pr-0 pl-0">
+      <SheetContent
+        side={direction === "rtl" ? "right" : "left"}
+        dir={direction}
+        className="pr-0 pl-0"
+      >
         <SheetHeader className="border-b px-4">
           <MobileLink
             href="/"
@@ -155,7 +165,10 @@ export function MobileNav() {
             <span className="font-bold text-[#FD8000] text-xl">Grub</span>
           </MobileLink>
         </SheetHeader>
-        <ScrollArea className="h-[calc(100vh-8rem)] pl-0 border-b">
+        <ScrollArea
+          className="h-[calc(100vh-8rem)] pl-0 border-b"
+          dir={direction}
+        >
           <div className="flex flex-col space-y-3">
             {navItems.map((item) => (
               <div key={item.title}>
@@ -174,7 +187,7 @@ export function MobileNav() {
                         <item.icon className="mr-2 h-4 w-4 text-primary" />
                         {item.title}
                         <motion.div
-                          className="ml-auto"
+                          className="ltr:ml-auto rtl:mr-auto"
                           animate={{ rotate: openItems[item.title] ? 180 : 0 }}
                           transition={{ duration: 0.2 }}
                         >
@@ -194,7 +207,7 @@ export function MobileNav() {
                           }}
                           transition={{ duration: 0.3, ease: "easeInOut" }}
                         >
-                          <CollapsibleContent className="ml-4 mt-2 space-y-2">
+                          <CollapsibleContent className="ltr:ml-4 rtl:mr-4 mt-2 space-y-2">
                             {item.subItems.map((subItem) => (
                               <MobileLink
                                 key={subItem.title}

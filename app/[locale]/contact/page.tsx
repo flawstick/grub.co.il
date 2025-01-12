@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -10,6 +11,7 @@ import { toast } from "@/hooks/use-toast";
 import { sendContactMessage } from "@/lib/api";
 
 export default function ContactPage() {
+  const t = useTranslations("ContactPage");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -24,15 +26,14 @@ export default function ContactPage() {
     try {
       await sendContactMessage({ name, email, message });
       toast({
-        title: "Message Sent",
-        description: "Thank you for your message. We'll get back to you soon!",
+        title: t("toast.success.title"),
+        description: t("toast.success.description"),
       });
       e.currentTarget.reset();
     } catch (error) {
       toast({
-        title: "Error",
-        description:
-          "There was a problem sending your message. Please try again.",
+        title: t("toast.error.title"),
+        description: t("toast.error.description"),
         variant: "destructive",
       });
     } finally {
@@ -48,7 +49,7 @@ export default function ContactPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        Contact Us
+        {t("title")}
       </motion.h1>
       <motion.div
         className="max-w-md mx-auto"
@@ -58,23 +59,39 @@ export default function ContactPage() {
       >
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <Label htmlFor="name">Name</Label>
-            <Input id="name" name="name" required />
+            <Label htmlFor="name">{t("form.name.label")}</Label>
+            <Input
+              id="name"
+              name="name"
+              placeholder={t("form.name.placeholder")}
+              required
+            />
           </div>
           <div>
-            <Label htmlFor="email">Email</Label>
-            <Input id="email" name="email" type="email" required />
+            <Label htmlFor="email">{t("form.email.label")}</Label>
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              placeholder={t("form.email.placeholder")}
+              required
+            />
           </div>
           <div>
-            <Label htmlFor="message">Message</Label>
-            <Textarea id="message" name="message" required />
+            <Label htmlFor="message">{t("form.message.label")}</Label>
+            <Textarea
+              id="message"
+              name="message"
+              placeholder={t("form.message.placeholder")}
+              required
+            />
           </div>
           <Button
             type="submit"
             className="w-full bg-[#FD8000] hover:bg-[#FD8000]/90 dark:bg-[#FFA500] dark:hover:bg-[#FFA500]/90"
             disabled={isSubmitting}
           >
-            {isSubmitting ? "Sending..." : "Send Message"}
+            {isSubmitting ? t("form.submit.loading") : t("form.submit.default")}
           </Button>
         </form>
       </motion.div>

@@ -8,6 +8,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { getMessages, getTranslations } from "next-intl/server";
+import { isRTL } from "@/lib/utils";
 
 const fredoka = Fredoka({
   subsets: ["latin"],
@@ -107,10 +108,11 @@ export default async function RootLayout({
 
   // Provide messages to the client side
   const messages = await getMessages();
+  const direction = isRTL(locale) ? "rtl" : "ltr";
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={fredoka.variable}>
+      <body className={fredoka.variable} dir={direction}>
         <NextIntlClientProvider messages={messages} locale={locale}>
           <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
             <div className="flex flex-col min-h-screen">

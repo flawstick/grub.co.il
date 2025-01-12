@@ -2,10 +2,12 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { AppleIcon, SmartphoneIcon as AndroidIcon } from "lucide-react";
 
 export default function DownloadPage() {
+  const t = useTranslations("DownloadPage");
   const [os, setOs] = useState<"ios" | "android" | "unknown">("unknown");
 
   useEffect(() => {
@@ -32,14 +34,13 @@ export default function DownloadPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Download Grub
+          {t("title")}
         </motion.h1>
         <motion.p
           className="text-xl mb-8 max-w-2xl mx-auto text-gray-600 dark:text-gray-300"
           {...fadeInUp}
         >
-          Get the Grub app on your device and start enjoying seamless meal
-          ordering for your team.
+          {t("description")}
         </motion.p>
         <motion.div
           className="mb-12"
@@ -54,15 +55,15 @@ export default function DownloadPage() {
             {os === "ios" ? (
               <>
                 <AppleIcon className="mr-2 h-6 w-6" />
-                Download for iOS
+                {t("buttons.ios")}
               </>
             ) : os === "android" ? (
               <>
                 <AndroidIcon className="mr-2 h-6 w-6" />
-                Download for Android
+                {t("buttons.android")}
               </>
             ) : (
-              "Download Grub"
+              t("buttons.generic")
             )}
           </Button>
         </motion.div>
@@ -72,19 +73,17 @@ export default function DownloadPage() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div className="space-y-6" {...fadeInUp}>
             <h2 className="text-3xl font-bold text-[#FD8000] dark:text-[#FFA500]">
-              Grub for Android
+              {t("sections.android.title")}
             </h2>
             <p className="text-gray-600 dark:text-gray-300">
-              Enjoy the full Grub experience on your Android device. Order
-              meals, manage your team's preferences, and streamline your
-              corporate dining with ease.
+              {t("sections.android.description")}
             </p>
             <Button
               size="lg"
               className="bg-[#3DDC84] hover:bg-[#3DDC84]/90 text-white"
             >
               <AndroidIcon className="mr-2 h-5 w-5" />
-              Get it on Google Play
+              {t("buttons.androidStore")}
             </Button>
           </motion.div>
           <motion.div
@@ -93,9 +92,8 @@ export default function DownloadPage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            {/* Placeholder for Android app screenshot */}
             <span className="text-gray-500 dark:text-gray-400">
-              Android App Screenshot
+              {t("sections.android.placeholder")}
             </span>
           </motion.div>
         </div>
@@ -109,23 +107,20 @@ export default function DownloadPage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            {/* Placeholder for iOS app screenshot */}
             <span className="text-gray-500 dark:text-gray-400">
-              iOS App Screenshot
+              {t("sections.ios.placeholder")}
             </span>
           </motion.div>
           <motion.div className="space-y-6" {...fadeInUp}>
             <h2 className="text-3xl font-bold text-[#FD8000] dark:text-[#FFA500]">
-              Grub for iOS
+              {t("sections.ios.title")}
             </h2>
             <p className="text-gray-600 dark:text-gray-300">
-              Experience Grub on your iPhone or iPad. Seamlessly integrate with
-              your company's meal program and enjoy a wide variety of dining
-              options at your fingertips.
+              {t("sections.ios.description")}
             </p>
             <Button size="lg" className="bg-black hover:bg-gray-800 text-white">
               <AppleIcon className="mr-2 h-5 w-5" />
-              Download on the App Store
+              {t("buttons.iosStore")}
             </Button>
           </motion.div>
         </div>
@@ -136,7 +131,7 @@ export default function DownloadPage() {
           className="text-3xl font-bold mb-6 text-[#FD8000] dark:text-[#FFA500]"
           {...fadeInUp}
         >
-          Why Choose the Grub App?
+          {t("whyChoose.title")}
         </motion.h2>
         <motion.div
           className="grid md:grid-cols-3 gap-8"
@@ -144,33 +139,19 @@ export default function DownloadPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold mb-4 text-[#FD8000] dark:text-[#FFA500]">
-              Easy Ordering
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300">
-              Browse menus, customize your meals, and place orders with just a
-              few taps.
-            </p>
-          </div>
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold mb-4 text-[#FD8000] dark:text-[#FFA500]">
-              Team Management
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300">
-              Easily manage your team's orders, preferences, and dietary
-              restrictions all in one place.
-            </p>
-          </div>
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold mb-4 text-[#FD8000] dark:text-[#FFA500]">
-              Real-time Updates
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300">
-              Get notifications about your order status, delivery times, and
-              special offers.
-            </p>
-          </div>
+          {["easyOrdering", "teamManagement", "realTimeUpdates"].map((key) => (
+            <div
+              key={key}
+              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
+            >
+              <h3 className="text-xl font-semibold mb-4 text-[#FD8000] dark:text-[#FFA500]">
+                {t(`whyChoose.items.${key}.title`)}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                {t(`whyChoose.items.${key}.description`)}
+              </p>
+            </div>
+          ))}
         </motion.div>
       </section>
     </div>

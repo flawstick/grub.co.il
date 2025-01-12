@@ -1,12 +1,1163 @@
 {
-  "HomePage": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
+  "Home": {
+    "faqTitle": "Frequently Asked Questions"
+  },
+  "LocaleSwitcher": {
+    "language": "Language"
   },
   "meta": {
     "title": "Grub – Streamline Team Meal Management",
     "description": "Effortless meal ordering, salary deductions, and restaurant partnerships—powered by Grub.",
     "keywords": "team meals, meal management, corporate meals, grub",
     "ogImage": "/images/og-image-en.jpg"
+  },
+  "BookDemo": {
+    "title": "Book a Demo",
+    "steps": {
+      "Organization Type": "Organization Type",
+      "Company Details": "Company Details",
+      "Meeting Preferences": "Meeting Preferences"
+    },
+    "thankYouTitle": "Thank you for your interest!",
+    "thankYouDescription": "We'll be in touch with you soon to schedule your demo.",
+    "bookAnotherDemo": "Book Another Demo",
+    "returnToHome": "Return to Home",
+    "organizationTypeTitle": "I come to you as a...",
+    "organizationTypeCompany": "Company",
+    "organizationTypeCompanyDescription": "I represent a company looking to improve our meal management",
+    "organizationTypeRestaurant": "Restaurant",
+    "organizationTypeRestaurantDescription": "I represent a restaurant interested in partnering with Grub",
+    "companyNameLabel": "Company Name",
+    "backButton": "Back",
+    "nextButton": "Next",
+    "onLocation": "On Location",
+    "googleMeet": "Google Meet",
+    "onLocationDescription": "We'll come to your location for the demo.",
+    "googleMeetDescription": "We'll send you a Google Meet link for the demo.",
+    "messageLabel": "Tell us more about your needs:",
+    "preferredDateLabel": "Preferred Date",
+    "pickDatePlaceholder": "Pick a date",
+    "preferredTimeLabel": "Preferred Time",
+    "chooseTimePlaceholder": "Choose time",
+    "submitButton": "Submit"
+  },
+  "AboutSection": {
+    "title": "About Grub",
+    "description": "Grub is revolutionizing corporate dining with our innovative meal management platform. We connect businesses, employees, and local restaurants to create a seamless and delightful dining experience.",
+    "features": {
+      "streamlinedOrdering": "Streamlined meal ordering for teams",
+      "payrollDeductions": "Integrated payroll deductions",
+      "localPartnerships": "Partnerships with local restaurants"
+    },
+    "learnMore": "Learn More",
+    "contactUs": "Contact Us"
+  },
+  "FAQAccordion": {
+    "questions": {
+      "howDoesGrubWork": "How does Grub work?",
+      "benefitsForEmployers": "What are the benefits for employers?",
+      "partnerWithGrub": "How do restaurants partner with Grub?",
+      "availableInMyArea": "Is Grub available in my area?",
+      "dietaryRestrictions": "How does Grub handle dietary restrictions and allergies?",
+      "accommodateBusinesses": "Can Grub accommodate both small businesses and large corporations?",
+      "paymentSecurity": "How secure is the payment process through Grub?"
+    },
+    "answers": {
+      "howDoesGrubWork": "Grub streamlines meal management for companies by providing an easy-to-use platform for employees to order meals, integrating with payroll systems, and partnering with local restaurants.",
+      "benefitsForEmployers": "Employers benefit from simplified meal management, increased employee satisfaction, and streamlined accounting processes for meal-related expenses.",
+      "partnerWithGrub": "Restaurants can partner with Grub by signing up on our platform. We provide them with access to a broader customer base and streamlined ordering processes.",
+      "availableInMyArea": "Grub is currently expanding its services to major cities across the United States. Please check our coverage area page or contact our sales team to see if we're available in your location.",
+      "dietaryRestrictions": "Grub allows employees to set their dietary preferences and allergies in their profiles. Our platform then filters meal options accordingly, ensuring that employees only see meals that meet their dietary needs.",
+      "accommodateBusinesses": "Yes, Grub's platform is scalable and can accommodate businesses of all sizes. We offer customizable solutions to meet the unique needs of both small businesses and large corporations.",
+      "paymentSecurity": "Grub uses industry-standard encryption and security measures to protect all financial transactions. We comply with PCI DSS standards and regularly undergo security audits to ensure the safety of our users' data."
+    }
+  },
+  "FeaturesSection": {
+    "title": "Features",
+    "easyEmployeeMeals": {
+      "title": "Easy Employee Meals",
+      "description": "Simplify meal ordering for your entire team with our intuitive platform."
+    },
+    "lowRestaurantFees": {
+      "title": "Low Restaurant Fees",
+      "description": "Partner with local restaurants to offer a wide variety of meal options at competitive prices."
+    },
+    "integratedPayrollDeductions": {
+      "title": "Integrated Payroll Deductions",
+      "description": "Seamlessly deduct meal costs from employee salaries for hassle-free accounting."
+    },
+    "teamManagement": {
+      "title": "Team Management",
+      "description": "Easily manage teams, departments, and individual meal preferences all in one place."
+    },
+    "scheduledOrders": {
+      "title": "Scheduled Orders",
+      "description": "Set up recurring orders for your team to streamline the meal planning process."
+    },
+    "customizableMenus": {
+      "title": "Customizable Menus",
+      "description": "Work with partner restaurants to create custom menus tailored to your team's preferences."
+    }
+  },
+  "Footer": {
+    "brandName": "Grub",
+    "links": {
+      "about": "About",
+      "features": "Features",
+      "testimonials": "Testimonials",
+      "bookDemo": "Book a Demo",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfService": "Terms of Service"
+    },
+    "rightsReserved": "All rights reserved."
+  },
+  "HeroSection": {
+    "title": "Streamline Meal Management for Your Team",
+    "description": "Effortless meal ordering, salary deductions, and restaurant partnerships—powered by Grub.",
+    "cta": "Book a Demo"
+  },
+  "MobileNav": {
+    "about": "About",
+    "features": {
+      "title": "Features",
+      "easyEmployeeMeals": "Easy Employee Meals",
+      "lowRestaurantFees": "Low Restaurant Fees",
+      "integratedPayroll": "Integrated Payroll",
+      "teamManagement": "Team Management",
+      "scheduledOrders": "Scheduled Orders",
+      "customizableMenus": "Customizable Menus"
+    },
+    "resources": {
+      "title": "Resources",
+      "downloadApp": "Download App",
+      "companyConsole": "Company Console",
+      "restaurantConsole": "Restaurant Console",
+      "contact": "Contact"
+    },
+    "testimonials": "Testimonials",
+    "bookDemo": "Book a Demo"
+  },
+  "Navigation": {
+    "grub": "Grub",
+    "about": "About",
+    "features": {
+      "title": "Features",
+      "easyEmployeeMeals": "Easy Employee Meals",
+      "easyEmployeeMealsDescription": "Simplify meal ordering for your entire team.",
+      "lowRestaurantFees": "Low Restaurant Fees",
+      "lowRestaurantFeesDescription": "Partner with local restaurants at competitive prices.",
+      "integratedPayroll": "Integrated Payroll",
+      "integratedPayrollDescription": "Seamless payroll deductions for meals.",
+      "teamManagement": "Team Management",
+      "teamManagementDescription": "Manage teams and meal preferences easily.",
+      "scheduledOrders": "Scheduled Orders",
+      "scheduledOrdersDescription": "Set up recurring orders for your team.",
+      "customizableMenus": "Customizable Menus",
+      "customizableMenusDescription": "Create custom menus for your team."
+    },
+    "resources": {
+      "title": "Resources",
+      "downloadApp": "Download App",
+      "downloadAppDescription": "Get the Grub app for iOS and Android devices.",
+      "companyConsole": "Company Console",
+      "companyConsoleDescription": "Manage your company's meal program and employee accounts.",
+      "restaurantConsole": "Restaurant Console",
+      "restaurantConsoleDescription": "For restaurant partners to manage menus and orders.",
+      "contact": "Contact",
+      "contactDescription": "Get in touch with our support team for assistance."
+    },
+    "testimonials": "Testimonials",
+    "bookDemo": "Book a Demo"
+  },
+  "Testimonials": {
+    "title": "What Our Clients Say",
+    "sarahJohnsonName": "Sarah Johnson",
+    "sarahJohnsonRole": "HR Manager, TechCorp",
+    "sarahJohnsonContent": "Grub has revolutionized our meal management process. Our employees love the variety of options, and our accounting team appreciates the seamless integration.",
+    "michaelChenName": "Michael Chen",
+    "michaelChenRole": "CEO, InnovateCo",
+    "michaelChenContent": "Since partnering with Grub, we've seen a significant increase in employee satisfaction. The platform is user-friendly and efficient.",
+    "emilyRodriguezName": "Emily Rodriguez",
+    "emilyRodriguezRole": "Operations Director, StartupX",
+    "emilyRodriguezContent": "Grub has made lunchtime a breeze for our team. The ordering process is smooth, and the integration with our payroll system is flawless.",
+    "davidKimName": "David Kim",
+    "davidKimRole": "Restaurant Owner, Tasty Bites",
+    "davidKimContent": "As a restaurant partner, Grub has opened up a whole new customer base for us. Their platform is easy to use and has significantly boosted our business.",
+    "lisaPatelName": "Lisa Patel",
+    "lisaPatelRole": "CFO, MegaCorp",
+    "lisaPatelContent": "The integrated payroll deductions feature has streamlined our accounting processes. Grub has saved us countless hours of administrative work.",
+    "tomWilsonName": "Tom Wilson",
+    "tomWilsonRole": "Team Lead, DevPro",
+    "tomWilsonContent": "Our team loves the customizable menus and scheduled orders. It's made our meal planning effortless and keeps everyone happy."
+  },
+  "ThemeToggle": {
+    "toggleTheme": "Toggle theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "Error": {
+    "title": "Oops!",
+    "description": "Something went wrong.",
+    "tryAgain": "Try again",
+    "goHome": "Go back to home"
+  },
+  "TestimonialsPage": {
+    "title": "Client Testimonials",
+    "description": "Discover what our clients have to say about their experience with Grub. From streamlined meal management to increased employee satisfaction, hear how Grub is transforming corporate dining."
+  },
+  "TermsOfService": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated: {date}",
+    "intro": "Please read these Terms of Service (\"Terms\", \"Terms of Service\") carefully before using the Grub website and service operated by Grub, Inc.",
+    "sections": {
+      "1": {
+        "title": "1. Agreement to Terms",
+        "content": "By accessing or using our Service, you agree to be bound by these Terms. If you disagree with any part of the terms, then you may not access the Service."
+      },
+      "2": {
+        "title": "2. Use of Service",
+        "content": "Our Service allows you to order meals from participating restaurants for yourself or your team. You are responsible for maintaining the confidentiality of your account and password and for restricting access to your account."
+      },
+      "3": {
+        "title": "3. Content",
+        "content": "Our Service allows you to post, link, store, share and otherwise make available certain information, text, graphics, or other material (\"Content\"). You are responsible for the Content that you post on or through the Service."
+      },
+      "4": {
+        "title": "4. Accounts",
+        "content": "When you create an account with us, you must provide information that is accurate, complete, and current at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of your account on our Service."
+      },
+      "5": {
+        "title": "5. Intellectual Property",
+        "content": "The Service and its original content, features, and functionality are and will remain the exclusive property of Grub, Inc. and its licensors."
+      },
+      "6": {
+        "title": "6. Links To Other Web Sites",
+        "content": "Our Service may contain links to third-party websites or services that are not owned or controlled by Grub, Inc. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services."
+      },
+      "7": {
+        "title": "7. Termination",
+        "content": "We may terminate or suspend access to our Service immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms."
+      },
+      "8": {
+        "title": "8. Governing Law",
+        "content": "These Terms shall be governed and construed in accordance with the laws of the United States, without regard to its conflict of law provisions."
+      },
+      "9": {
+        "title": "9. Changes",
+        "content": "We reserve the right, at our sole discretion, to modify or replace these Terms at any time. By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms."
+      }
+    },
+    "contactUs": {
+      "title": "Contact Us",
+      "address": "Aion Arete Israel, Ltd.\nKehilat Yahadut Tsarfat, 12\nMa'alot-Tarshiha, 2108349",
+      "email": "terms@grub.co.il"
+    },
+    "returnToHome": "Return to Home"
+  },
+  "PrivacyPolicy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: {date}",
+    "intro": "At Grub, we take your privacy seriously. This Privacy Policy describes how we collect, use, and share your personal information when you use our services.",
+    "informationWeCollect": {
+      "title": "Information We Collect",
+      "description": "We collect information you provide directly to us, such as when you create an account, place an order, or contact us for support. This may include:",
+      "items": {
+        "1": "Name and contact information",
+        "2": "Payment information",
+        "3": "Dietary preferences and restrictions",
+        "4": "Order history"
+      }
+    },
+    "howWeUseYourInformation": {
+      "title": "How We Use Your Information",
+      "description": "We use your information to:",
+      "items": {
+        "1": "Provide, maintain, and improve our services",
+        "2": "Process transactions and send related information",
+        "3": "Send you technical notices, updates, and support messages",
+        "4": "Respond to your comments and questions",
+        "5": "Develop new products and services"
+      }
+    },
+    "sharingOfInformation": {
+      "title": "Sharing of Information",
+      "description": "We may share your information with:",
+      "items": {
+        "1": "Restaurants to fulfill your orders",
+        "2": "Service providers who perform services on our behalf",
+        "3": "Law enforcement or other third parties in response to a legal request"
+      }
+    },
+    "yourChoices": {
+      "title": "Your Choices",
+      "description": "You can access and update certain information about you from within your Grub account. You may also opt out of receiving promotional communications from us by following the instructions in those messages."
+    },
+    "changesToThisPolicy": {
+      "title": "Changes to This Policy",
+      "description": "We may change this privacy policy from time to time. If we make changes, we will notify you by revising the date at the top of the policy."
+    },
+    "contactUs": {
+      "title": "Contact Us",
+      "description": "If you have any questions about this privacy policy, please contact us at:",
+      "address": "Aion Arete Israel, Ltd.\nKehilat Yahadut Tsarfat, 12\nMa'alot-Tarshiha, 2108349",
+      "email": "privacy@grub.co.il"
+    },
+    "returnToHome": "Return to Home"
+  },
+  "AboutPage": {
+    "title": "About Grub",
+    "mission": {
+      "title": "Our Mission",
+      "description1": "Grub is a revolutionary platform that enables companies to support their employees with easy food ordering, seamless payroll integration, and restaurant partnerships.",
+      "description2": "Our mission is to simplify meal management for businesses of all sizes, creating a win-win situation for employers, employees, and local restaurants."
+    },
+    "images": {
+      "mission": "Grub mission illustration"
+    },
+    "beneficiaries": {
+      "employers": {
+        "title": "For Employers",
+        "description": "Simplify meal management and boost employee satisfaction"
+      },
+      "employees": {
+        "title": "For Employees",
+        "description": "Enjoy a wide variety of meal options with easy ordering"
+      },
+      "restaurants": {
+        "title": "For Restaurants",
+        "description": "Expand your customer base and streamline orders"
+      }
+    },
+    "founders": {
+      "title": "About the Owners",
+      "amir": {
+        "name": "Amir Isaac",
+        "role": "CO-Founder and CEO",
+        "bio": "Amir brings over 15 years of experience in the tech industry, with a passion for revolutionizing corporate dining experiences."
+      },
+      "george": {
+        "name": "George Daniel Hayek",
+        "role": "CO-Founder",
+        "bio": "George has a background in restaurant management and tech entrepreneurship, bringing a unique perspective to Grub's mission."
+      }
+    }
+  },
+  "GeorgeHayekPage": {
+    "name": "George Daniel Hayek",
+    "role": "CO-Founder",
+    "introduction": "Introduction",
+    "background": "Background",
+    "vision": "Vision for Grub",
+    "expertise": "Areas of Expertise",
+    "thoughts": "George's Thoughts",
+    "contact": "Contact George",
+    "introductionContent": "George Daniel Hayek brings a unique blend of restaurant management expertise and tech entrepreneurship to Grub. As a CO-Founder, George plays a crucial role in shaping Grub's strategy and operations.",
+    "backgroundTitle": "Background",
+    "backgroundContent": [
+      "10+ years of experience in restaurant management",
+      "Successful tech startup founder in the food industry",
+      "MBA from Harvard Business School",
+      "Bachelor's in Hospitality Management from Cornell University"
+    ],
+    "backgroundAlt": "George's Professional Journey",
+    "visionTitle": "Vision for Grub",
+    "visionContent": "George's vision for Grub is to create a platform that not only revolutionizes corporate dining but also empowers local restaurants to thrive in the digital age. He sees Grub as a bridge between the corporate world and the local food scene, fostering community and supporting small businesses.",
+    "visionDetails": {
+      "empoweringRestaurantsTitle": "Empowering Restaurants",
+      "empoweringRestaurantsContent": "George is committed to providing restaurants with the tools and platform they need to expand their customer base and streamline operations.",
+      "enhancingCorporateCultureTitle": "Enhancing Corporate Culture",
+      "enhancingCorporateCultureContent": "Through Grub, George aims to transform corporate dining into a tool for building stronger, more connected workplace communities."
+    },
+    "expertiseTitle": "Areas of Expertise",
+    "expertiseContent": [
+      "Restaurant operations and management",
+      "Food tech innovation",
+      "Supply chain optimization",
+      "Customer experience design",
+      "Strategic partnerships in the food industry"
+    ],
+    "expertiseAlt": "George's Areas of Expertise",
+    "thoughtsTitle": "George's Thoughts",
+    "thoughtsQuote": "\"Grub is more than just a meal management platform. It's a way to bring people together, support local businesses, and create meaningful connections through food.\"",
+    "thoughtsDetails": {
+      "onInnovationTitle": "On Innovation",
+      "onInnovationContent": "\"The future of dining lies at the intersection of technology and hospitality. At Grub, we're constantly innovating to enhance both.\"",
+      "onCommunityTitle": "On Community",
+      "onCommunityContent": "\"By connecting corporations with local restaurants, we're not just facilitating transactions; we're building stronger, more vibrant communities.\""
+    },
+    "contactTitle": "Contact George",
+    "contactContent": "Interested in learning more about Grub's restaurant partnerships or discussing the future of food tech? Get in touch with George directly.",
+    "contactButton": "Contact George"
+  },
+  "AmirIsaacPage": {
+    "navigation": {
+      "introduction": "Introduction",
+      "background": "Background",
+      "vision": "Vision for Grub",
+      "achievements": "Achievements",
+      "thoughts": "Amir's Thoughts",
+      "contact": "Contact Amir"
+    },
+    "introduction": {
+      "name": "Amir Isaac",
+      "role": "CO-Founder and CEO",
+      "imageAlt": "Amir Isaac",
+      "content": "Amir Isaac brings over 15 years of experience in the tech industry, with a passion for revolutionizing corporate dining experiences. As the CO-Founder and CEO of Grub, Amir leads the company's vision and strategy."
+    },
+    "background": {
+      "title": "Background",
+      "point1": "Former Product Manager at leading tech companies",
+      "point2": "MBA from Stanford Graduate School of Business",
+      "point3": "Bachelor's in Computer Science from MIT",
+      "point4": "Serial entrepreneur with two successful exits",
+      "imageAlt": "Amir's Professional Journey"
+    },
+    "vision": {
+      "title": "Vision for Grub",
+      "content": "Amir's vision for Grub is to create a seamless ecosystem that connects companies, employees, and local restaurants. He believes in leveraging technology to solve the complexities of corporate dining, ultimately enhancing workplace satisfaction and supporting local businesses.",
+      "detail1": {
+        "title": "Innovating Corporate Dining",
+        "content": "Amir aims to transform how companies approach employee meals, making it a seamless and enjoyable experience for all."
+      },
+      "detail2": {
+        "title": "Supporting Local Restaurants",
+        "content": "Through Grub, Amir envisions creating a platform that helps local restaurants thrive by connecting them with corporate clients."
+      }
+    },
+    "achievements": {
+      "title": "Achievements",
+      "point1": "Led Grub to secure $10 million in Series A funding",
+      "point2": "Expanded Grub's operations to 10 major cities across the United States",
+      "point3": "Formed partnerships with over 500 local restaurants",
+      "point4": "Recognized as 'Innovator of the Year' by TechCrunch in 2023",
+      "imageAlt": "Amir's Achievements"
+    },
+    "thoughts": {
+      "title": "Amir's Thoughts",
+      "quote": "\"At Grub, we're not just building a meal management platform. We're creating a solution that brings people together, supports local businesses, and makes the workplace a little bit better every day.\"",
+      "detail1": {
+        "title": "On Technology",
+        "content": "\"Technology should simplify our lives and bring us closer together. That's what we strive for with every feature we develop at Grub.\""
+      },
+      "detail2": {
+        "title": "On Leadership",
+        "content": "\"Great leaders don't create followers; they create more leaders. At Grub, we're building a team of innovators and problem-solvers.\""
+      }
+    },
+    "contact": {
+      "title": "Contact Amir",
+      "content": "Interested in learning more about Grub or discussing potential partnerships? Get in touch with Amir directly.",
+      "button": "Contact Amir"
+    }
+  },
+  "GeorgeHayekPage": {
+    "navigation": {
+      "introduction": "Introduction",
+      "background": "Background",
+      "vision": "Vision for Grub",
+      "expertise": "Expertise",
+      "thoughts": "George's Thoughts",
+      "contact": "Contact George"
+    },
+    "introduction": {
+      "name": "George Daniel Hayek",
+      "role": "CO-Founder",
+      "content": "George Daniel Hayek brings a unique blend of restaurant management expertise and tech entrepreneurship to Grub. As a CO-Founder, George plays a crucial role in shaping Grub's strategy and operations."
+    },
+    "background": {
+      "title": "Background",
+      "point1": "10+ years of experience in restaurant management",
+      "point2": "Successful tech startup founder in the food industry",
+      "point3": "MBA from Harvard Business School",
+      "point4": "Bachelor's in Hospitality Management from Cornell University",
+      "imageAlt": "George's Professional Journey"
+    },
+    "vision": {
+      "title": "Vision for Grub",
+      "content": "George's vision for Grub is to create a platform that not only revolutionizes corporate dining but also empowers local restaurants to thrive in the digital age.",
+      "detail1": {
+        "title": "Empowering Restaurants",
+        "content": "George is committed to providing restaurants with the tools and platform they need to expand their customer base and streamline operations."
+      },
+      "detail2": {
+        "title": "Enhancing Corporate Culture",
+        "content": "Through Grub, George aims to transform corporate dining into a tool for building stronger, more connected workplace communities."
+      }
+    },
+    "expertise": {
+      "title": "Expertise",
+      "point1": "Restaurant operations and management",
+      "point2": "Food tech innovation",
+      "point3": "Supply chain optimization",
+      "point4": "Customer experience design",
+      "imageAlt": "George's Areas of Expertise"
+    },
+    "thoughts": {
+      "title": "George's Thoughts",
+      "quote": "\"Grub is more than just a meal management platform. It's a way to bring people together, support local businesses, and create meaningful connections through food.\""
+    },
+    "contact": {
+      "title": "Contact George",
+      "content": "Interested in learning more about Grub's restaurant partnerships or discussing the future of food tech? Get in touch with George directly.",
+      "button": "Contact George"
+    }
+  },
+  "ForEmployeesPage": {
+    "navigation": {
+      "introduction": "Introduction",
+      "keyBenefits": "Key Benefits",
+      "howItWorks": "How It Works",
+      "testimonials": "Employee Testimonials",
+      "getStarted": "Get Started"
+    },
+    "introduction": {
+      "title": "Grub for Employees",
+      "content": "Enjoy a wide variety of delicious meals with easy ordering and convenient payment options. Grub makes your workday dining experience seamless and enjoyable.",
+      "imageAlt": "Grub for Employees Overview"
+    },
+    "keyBenefits": {
+      "title": "Key Benefits",
+      "easyOrdering": {
+        "title": "Easy Ordering",
+        "content": "Browse menus, customize your meals, and place orders with just a few taps on our user-friendly app.",
+        "imageAlt": "Easy Ordering Process"
+      },
+      "mealVariety": {
+        "title": "Meal Variety",
+        "content": "Choose from a wide range of cuisines and restaurants, ensuring you never get bored with your lunch options.",
+        "imageAlt": "Meal Variety Options"
+      },
+      "dietaryOptions": {
+        "title": "Dietary Options",
+        "content": "Easily find meals that meet your dietary requirements, whether you're vegetarian, vegan, gluten-free, or have other preferences.",
+        "imageAlt": "Dietary Options"
+      },
+      "convenientPayment": {
+        "title": "Convenient Payment",
+        "content": "Enjoy hassle-free payment through automatic payroll deductions or other flexible payment options.",
+        "imageAlt": "Convenient Payment Options"
+      },
+      "teamBonding": {
+        "title": "Team Bonding",
+        "content": "Coordinate meals with your colleagues and enjoy lunch together, fostering better team relationships.",
+        "imageAlt": "Team Bonding Over Meals"
+      }
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "steps": {
+        "1": "Download the Grub app and create your account",
+        "2": "Browse available restaurants and menus",
+        "3": "Customize your meal and place your order",
+        "4": "Choose your preferred payment method",
+        "5": "Receive notifications about your order status",
+        "6": "Enjoy your meal!"
+      },
+      "imageAlt": "How Grub Works for Employees"
+    },
+    "testimonials": {
+      "title": "Employee Testimonials",
+      "items": {
+        "1": {
+          "name": "Sarah K., Marketing Manager",
+          "content": "Grub has made lunchtime so much easier and more enjoyable. I love the variety of options and how simple it is to use!"
+        },
+        "2": {
+          "name": "Mike T., Software Developer",
+          "content": "As someone with dietary restrictions, Grub has been a game-changer. I can easily find meals that meet my needs."
+        }
+      }
+    },
+    "getStarted": {
+      "title": "Get Started with Grub",
+      "content": "Ready to revolutionize your workday dining experience? Download the Grub app today and start enjoying delicious, convenient meals at work!",
+      "downloadButton": "Download App",
+      "learnMoreButton": "Learn More"
+    }
+  },
+  "ForEmployersPage": {
+    "navigation": {
+      "introduction": "Introduction",
+      "keyBenefits": "Key Benefits",
+      "howItWorks": "How It Works",
+      "caseStudies": "Case Studies",
+      "getStarted": "Get Started"
+    },
+    "introduction": {
+      "title": "Grub for Employers",
+      "content": "Simplify meal management and boost employee satisfaction with Grub's comprehensive solution for corporate dining. Our platform is designed to streamline the entire process, from ordering to payment, making it easier than ever to provide quality meals for your team.",
+      "imageAlt": "Grub for Employers Overview"
+    },
+    "keyBenefits": {
+      "title": "Key Benefits",
+      "streamlinedOrdering": {
+        "title": "Streamlined Ordering",
+        "content": "Our intuitive platform allows employees to easily browse menus, place orders, and customize their meals, all in one place.",
+        "imageAlt": "Streamlined Ordering Process"
+      },
+      "reducedOverhead": {
+        "title": "Reduced Administrative Overhead",
+        "content": "Automate the meal management process, reducing the time and resources needed to coordinate corporate dining.",
+        "imageAlt": "Reduced Administrative Overhead"
+      },
+      "employeeSatisfaction": {
+        "title": "Increased Employee Satisfaction",
+        "content": "Offer a wide variety of meal options to cater to different dietary needs and preferences, boosting overall employee satisfaction.",
+        "imageAlt": "Increased Employee Satisfaction"
+      },
+      "payrollIntegration": {
+        "title": "Easy Integration with Payroll Systems",
+        "content": "Seamlessly integrate Grub with your existing payroll systems for hassle-free meal deductions and expense tracking.",
+        "imageAlt": "Payroll Integration"
+      },
+      "customizablePrograms": {
+        "title": "Customizable Meal Programs",
+        "content": "Tailor your meal program to fit your company's unique needs, whether it's daily lunches, special events, or flexible meal allowances.",
+        "imageAlt": "Customizable Meal Programs"
+      }
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "steps": {
+        "1": "Set up your company account and customize your meal program",
+        "2": "Invite employees to join the platform",
+        "3": "Employees browse menus and place orders",
+        "4": "Grub coordinates with partner restaurants for meal preparation and delivery",
+        "5": "Automated payment processing and expense tracking",
+        "6": "Access detailed analytics and reports on program usage and satisfaction"
+      },
+      "imageAlt": "How Grub Works for Employers"
+    },
+    "caseStudies": {
+      "title": "Case Studies",
+      "items": {
+        "1": {
+          "title": "TechCorp Streamlines Lunch",
+          "content": "TechCorp implemented Grub and saw a 30% increase in employee satisfaction and a 20% reduction in administrative costs related to meal management."
+        },
+        "2": {
+          "title": "StartupX Boosts Team Morale",
+          "content": "StartupX used Grub to offer flexible meal allowances, resulting in improved team collaboration and a more positive work environment."
+        }
+      }
+    },
+    "getStarted": {
+      "title": "Get Started with Grub",
+      "content": "Ready to revolutionize your corporate dining experience? Book a demo with our team to see how Grub can benefit your company.",
+      "button": "Book a Demo"
+    }
+  },
+  "ForRestaurantsPage": {
+    "navigation": {
+      "introduction": "Introduction",
+      "keyBenefits": "Key Benefits",
+      "howItWorks": "How It Works",
+      "successStories": "Success Stories",
+      "joinGrub": "Join Grub"
+    },
+    "introduction": {
+      "title": "Grub for Restaurants",
+      "content": "Expand your customer base and streamline your operations with Grub. Join our network of restaurants serving delicious meals to corporate clients.",
+      "imageAlt": "Grub for Restaurants Overview"
+    },
+    "keyBenefits": {
+      "title": "Key Benefits",
+      "expandedCustomerBase": {
+        "title": "Expanded Customer Base",
+        "content": "Reach corporate clients and their employees, significantly expanding your potential customer base.",
+        "imageAlt": "Expanded Customer Base"
+      },
+      "streamlinedOperations": {
+        "title": "Streamlined Operations",
+        "content": "Manage orders, payments, and deliveries through our easy-to-use platform, reducing administrative overhead.",
+        "imageAlt": "Streamlined Operations"
+      },
+      "increasedRevenue": {
+        "title": "Increased Revenue",
+        "content": "Boost your sales with a steady stream of corporate orders, especially during typically slower business hours.",
+        "imageAlt": "Increased Revenue"
+      },
+      "brandVisibility": {
+        "title": "Brand Visibility",
+        "content": "Increase your restaurant's visibility among corporate clients and their employees, potentially leading to more direct business.",
+        "imageAlt": "Brand Visibility"
+      },
+      "dataInsights": {
+        "title": "Data Insights",
+        "content": "Gain valuable insights into customer preferences and ordering patterns to optimize your menu and operations.",
+        "imageAlt": "Data Insights"
+      }
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "steps": {
+        "1": "Sign up as a Grub restaurant partner",
+        "2": "Set up your menu and pricing on our platform",
+        "3": "Receive orders from corporate clients",
+        "4": "Prepare and package meals for delivery or pickup",
+        "5": "Get paid quickly and securely through our system",
+        "6": "Access reports and insights to grow your business"
+      },
+      "imageAlt": "How Grub Works for Restaurants"
+    },
+    "successStories": {
+      "title": "Success Stories",
+      "items": {
+        "1": {
+          "title": "Tasty Bites Cafe",
+          "content": "Since partnering with Grub, we've seen a 40% increase in our weekday lunch orders. It's been a game-changer for our business!"
+        },
+        "2": {
+          "title": "Green Leaf Eatery",
+          "content": "Grub has helped us reach a whole new customer base. We're now the go-to healthy option for several local companies."
+        }
+      }
+    },
+    "joinGrub": {
+      "title": "Join Grub",
+      "content": "Ready to grow your restaurant business with Grub? Join our network of successful restaurant partners today!",
+      "buttonPartner": "Become a Partner",
+      "buttonLearnMore": "Learn More"
+    }
+  },
+  "ContactPage": {
+    "title": "Contact Us",
+    "form": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Enter your name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Enter your email address"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Write your message here"
+      },
+      "submit": {
+        "default": "Send Message",
+        "loading": "Sending..."
+      }
+    },
+    "toast": {
+      "success": {
+        "title": "Message Sent",
+        "description": "Thank you for your message. We'll get back to you soon!"
+      },
+      "error": {
+        "title": "Error",
+        "description": "There was a problem sending your message. Please try again."
+      }
+    }
+  },
+  "DownloadPage": {
+    "title": "Download Grub",
+    "description": "Get the Grub app on your device and start enjoying seamless meal ordering for your team.",
+    "buttons": {
+      "ios": "Download for iOS",
+      "android": "Download for Android",
+      "generic": "Download Grub",
+      "iosStore": "Download on the App Store",
+      "androidStore": "Get it on Google Play"
+    },
+    "sections": {
+      "android": {
+        "title": "Grub for Android",
+        "description": "Enjoy the full Grub experience on your Android device. Order meals, manage your team's preferences, and streamline your corporate dining with ease.",
+        "placeholder": "Android App Screenshot"
+      },
+      "ios": {
+        "title": "Grub for iOS",
+        "description": "Experience Grub on your iPhone or iPad. Seamlessly integrate with your company's meal program and enjoy a wide variety of dining options at your fingertips.",
+        "placeholder": "iOS App Screenshot"
+      }
+    },
+    "whyChoose": {
+      "title": "Why Choose the Grub App?",
+      "items": {
+        "easyOrdering": {
+          "title": "Easy Ordering",
+          "description": "Browse menus, customize your meals, and place orders with just a few taps."
+        },
+        "teamManagement": {
+          "title": "Team Management",
+          "description": "Easily manage your team's orders, preferences, and dietary restrictions all in one place."
+        },
+        "realTimeUpdates": {
+          "title": "Real-time Updates",
+          "description": "Get notifications about your order status, delivery times, and special offers."
+        }
+      }
+    }
+  },
+  "CustomizableMenusPage": {
+    "title": "Customizable Menus",
+    "introduction": "Grub's Customizable Menus feature allows you to create tailored meal options that perfectly suit your team's preferences and dietary needs, enhancing the overall dining experience.",
+    "introductionAlt": "Customizable Menus Overview",
+    "nav": {
+      "introduction": "Introduction",
+      "keyFeatures": "Key Features",
+      "menuCreation": "Menu Creation",
+      "dietaryOptions": "Dietary Options",
+      "seasonalRotations": "Seasonal Rotations",
+      "howItWorks": "How It Works",
+      "benefits": "Benefits",
+      "getStarted": "Get Started"
+    },
+    "keyFeatures": {
+      "title": "Key Features",
+      "menuCreation": {
+        "title": "Menu Creation",
+        "description": "Design unique menus that reflect your company culture and cater to your employees' tastes, working with our partner restaurants to curate the perfect selection.",
+        "alt": "Menu Creation Interface"
+      },
+      "dietaryOptions": {
+        "title": "Dietary Options",
+        "description": "Easily incorporate a wide range of dietary options, including vegetarian, vegan, gluten-free, and allergen-friendly meals to accommodate all team members.",
+        "alt": "Dietary Options Selection"
+      },
+      "seasonalRotations": {
+        "title": "Seasonal Rotations",
+        "description": "Keep your menu fresh and exciting with seasonal rotations, featuring locally sourced ingredients and special holiday-themed options.",
+        "alt": "Seasonal Menu Rotation"
+      }
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "steps": [
+        "Consult with our menu specialists to understand your team's preferences.",
+        "Work with partner restaurants to create custom dishes or modify existing ones.",
+        "Set up your personalized menu within the Grub platform.",
+        "Configure dietary options and allergen information for each item.",
+        "Implement seasonal rotations and special event menus as desired.",
+        "Gather feedback from your team and make adjustments as needed."
+      ],
+      "alt": "How Customizable Menus Work"
+    },
+    "benefits": {
+      "title": "Benefits",
+      "items": [
+        "Increased employee satisfaction with personalized meal options.",
+        "Improved inclusivity by catering to various dietary needs and preferences.",
+        "Enhanced company culture through curated dining experiences.",
+        "Better control over nutrition and ingredient quality.",
+        "Flexibility to adapt menus for special events or company milestones.",
+        "Support for local restaurants and seasonal produce."
+      ],
+      "alt": "Benefits of Customizable Menus"
+    },
+    "getStarted": {
+      "title": "Get Started",
+      "description": "Ready to create a unique dining experience for your team with Customizable Menus? Contact our team to start designing your perfect menu and elevate your corporate dining program."
+    }
+  },
+  "EasyEmployeeMealsPage": {
+    "title": "Easy Employee Meals",
+    "introduction": "Simplify meal ordering for your entire team with our intuitive platform. Grub makes it easy for employees to browse menus, place orders, and enjoy delicious meals without the hassle.",
+    "introductionAlt": "Easy Employee Meals Overview",
+    "nav": {
+      "introduction": "Introduction",
+      "keyFeatures": "Key Features",
+      "intuitiveOrdering": "Intuitive Ordering",
+      "customization": "Meal Customization",
+      "groupOrders": "Group Orders",
+      "howItWorks": "How It Works",
+      "benefits": "Benefits",
+      "getStarted": "Get Started"
+    },
+    "keyFeatures": {
+      "title": "Key Features",
+      "intuitiveOrdering": {
+        "title": "Intuitive Ordering",
+        "description": "Our user-friendly interface makes it simple for employees to browse menus, select meals, and place orders in just a few clicks.",
+        "alt": "Intuitive Ordering Interface"
+      },
+      "customization": {
+        "title": "Meal Customization",
+        "description": "Employees can easily customize their meals to fit their dietary preferences and restrictions, ensuring everyone gets exactly what they want.",
+        "alt": "Meal Customization Options"
+      },
+      "groupOrders": {
+        "title": "Group Orders",
+        "description": "Coordinate team lunches and meetings effortlessly with our group ordering feature, allowing multiple employees to add to a single order.",
+        "alt": "Group Ordering Feature"
+      }
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "steps": [
+        "Employees log in to the Grub platform.",
+        "Browse available restaurants and menus.",
+        "Select and customize meals.",
+        "Add items to cart and review order.",
+        "Choose payment method (including payroll deduction if enabled).",
+        "Submit order and receive confirmation.",
+        "Enjoy the meal when it arrives!"
+      ],
+      "alt": "How Easy Employee Meals Work"
+    },
+    "benefits": {
+      "title": "Benefits",
+      "items": [
+        "Save time and reduce stress associated with meal planning.",
+        "Increase employee satisfaction with a wide variety of food options.",
+        "Promote team bonding through shared meals and group orders.",
+        "Ensure dietary needs and preferences are met for all employees.",
+        "Streamline the payment process with integrated payroll deductions.",
+        "Support local restaurants and contribute to the community."
+      ],
+      "alt": "Benefits of Easy Employee Meals"
+    },
+    "getStarted": {
+      "title": "Get Started",
+      "description": "Ready to simplify meal management for your team? Contact our sales team to learn more about implementing Grub's Easy Employee Meals feature for your organization."
+    }
+  },
+  "IntegratedPayrollDeductionsPage": {
+    "title": "Integrated Payroll Deductions",
+    "introduction": "Grub's Integrated Payroll Deductions feature seamlessly connects your company's payroll system with our meal management platform, making it easy to handle meal expenses for both employers and employees.",
+    "introductionAlt": "Integrated Payroll Deductions Overview",
+    "nav": {
+      "introduction": "Introduction",
+      "benefits": "Benefits",
+      "simplifiedAccounting": "Simplified Accounting",
+      "employeeConvenience": "Employee Convenience",
+      "taxBenefits": "Tax Benefits",
+      "howItWorks": "How It Works",
+      "security": "Security and Compliance",
+      "getStarted": "Get Started"
+    },
+    "benefits": {
+      "title": "Benefits",
+      "simplifiedAccounting": {
+        "title": "Simplified Accounting",
+        "description": "Automate the process of tracking and deducting meal expenses, reducing administrative overhead and minimizing errors.",
+        "alt": "Simplified Accounting Illustration"
+      },
+      "employeeConvenience": {
+        "title": "Employee Convenience",
+        "description": "Employees can enjoy meals without worrying about immediate out-of-pocket expenses or reimbursement processes.",
+        "alt": "Employee Convenience Demonstration"
+      },
+      "taxBenefits": {
+        "title": "Tax Benefits",
+        "description": "Properly structured meal programs with payroll deductions can offer tax advantages for both employers and employees.",
+        "alt": "Tax Benefits Explanation"
+      }
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "steps": [
+        "Grub integrates with your existing payroll system.",
+        "Employees order meals through the Grub platform.",
+        "Meal expenses are automatically tracked and calculated.",
+        "Deductions are processed during the regular payroll cycle.",
+        "Detailed reports are generated for accounting and tax purposes."
+      ],
+      "alt": "How Integrated Payroll Deductions Work"
+    },
+    "security": {
+      "title": "Security and Compliance",
+      "description": "Grub's Integrated Payroll Deductions feature is designed with security and compliance in mind. We use industry-standard encryption and follow all relevant data protection regulations to ensure the safety and privacy of your company's and employees' information.",
+      "items": [
+        "End-to-end encryption for all data transfers.",
+        "Regular security audits and penetration testing.",
+        "Compliance with GDPR, CCPA, and other applicable regulations.",
+        "Secure API integrations with major payroll providers."
+      ],
+      "alt": "Security and Compliance Measures"
+    },
+    "getStarted": {
+      "title": "Get Started",
+      "description": "Ready to streamline your meal program accounting and offer a convenient perk to your employees? Contact our team to learn more about implementing Grub's Integrated Payroll Deductions for your organization."
+    }
+  },
+  "LowRestaurantFeesPage": {
+    "title": "Low Restaurant Fees",
+    "introduction": "Grub's Low Restaurant Fees feature allows you to partner with local restaurants at competitive prices, benefiting both your company and local businesses.",
+    "introductionAlt": "Low Restaurant Fees Overview",
+    "nav": {
+      "introduction": "Introduction",
+      "benefits": "Benefits",
+      "costSavings": "Cost Savings",
+      "increasedParticipation": "Increased Participation",
+      "localSupport": "Local Business Support",
+      "howItWorks": "How It Works",
+      "caseStudies": "Case Studies",
+      "getStarted": "Get Started"
+    },
+    "benefits": {
+      "title": "Benefits",
+      "costSavings": {
+        "title": "Cost Savings",
+        "description": "By negotiating lower fees with restaurants, Grub helps your company save on meal expenses without compromising on quality or variety.",
+        "alt": "Cost Savings Illustration"
+      },
+      "increasedParticipation": {
+        "title": "Increased Participation",
+        "description": "Lower fees mean more affordable meals for employees, encouraging higher participation in your company's meal program.",
+        "alt": "Increased Participation Graph"
+      },
+      "localSupport": {
+        "title": "Local Business Support",
+        "description": "By partnering with local restaurants, you're supporting your community's economy while providing diverse meal options to your employees.",
+        "alt": "Local Business Support"
+      }
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "steps": [
+        "Grub negotiates competitive rates with local restaurants.",
+        "Restaurants are integrated into the Grub platform.",
+        "Your company selects preferred restaurant partners.",
+        "Employees order from these restaurants at discounted rates.",
+        "Grub handles all payments and logistics."
+      ],
+      "alt": "How Low Restaurant Fees Work"
+    },
+    "caseStudies": {
+      "title": "Case Studies",
+      "techCorpSavings": {
+        "title": "TechCorp Savings",
+        "description": "TechCorp saved 20% on their annual meal expenses after implementing Grub's Low Restaurant Fees program."
+      },
+      "localBistroGrowth": {
+        "title": "Local Bistro Growth",
+        "description": "A local bistro saw a 30% increase in orders after partnering with Grub and offering competitive rates to nearby businesses."
+      }
+    },
+    "getStarted": {
+      "title": "Get Started",
+      "description": "Ready to start saving on your company's meal expenses while supporting local businesses? Contact our team to learn more about implementing Grub's Low Restaurant Fees program for your organization."
+    }
+  },
+  "ScheduledOrdersPage": {
+    "title": "Scheduled Orders",
+    "introduction": "Grub's Scheduled Orders feature allows you to set up recurring orders for your team, streamlining the meal planning process and ensuring everyone gets their favorite meals on time.",
+    "introductionAlt": "Scheduled Orders Overview",
+    "nav": {
+      "introduction": "Introduction",
+      "keyFeatures": "Key Features",
+      "recurringOrders": "Recurring Orders",
+      "flexibleScheduling": "Flexible Scheduling",
+      "customization": "Customization Options",
+      "howItWorks": "How It Works",
+      "benefits": "Benefits",
+      "getStarted": "Get Started"
+    },
+    "keyFeatures": {
+      "recurringOrders": {
+        "title": "Recurring Orders",
+        "description": "Set up daily, weekly, or monthly meal orders for individuals or teams, ensuring consistent meal delivery without manual intervention.",
+        "alt": "Recurring Orders Feature"
+      },
+      "flexibleScheduling": {
+        "title": "Flexible Scheduling",
+        "description": "Choose specific days, times, and frequencies for meal deliveries to accommodate various work schedules and team needs.",
+        "alt": "Flexible Scheduling Options"
+      },
+      "customization": {
+        "title": "Customization Options",
+        "description": "Tailor recurring orders with meal rotations, dietary preferences, and the ability to easily modify or pause schedules as needed.",
+        "alt": "Customization Options Interface"
+      }
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "steps": [
+        "Access the Scheduled Orders feature in your Grub dashboard.",
+        "Select the individuals or teams for whom you want to set up recurring orders.",
+        "Choose the frequency, days, and times for meal deliveries.",
+        "Select meals or set up meal rotations based on preferences.",
+        "Review and confirm the scheduled orders.",
+        "Grub automatically processes and delivers meals according to the schedule."
+      ],
+      "alt": "How Scheduled Orders Work"
+    },
+    "benefits": {
+      "title": "Benefits",
+      "list": [
+        "Time-saving: Eliminate the need for daily manual order placement.",
+        "Consistency: Ensure regular meal deliveries for your team.",
+        "Customization: Cater to individual preferences and dietary needs.",
+        "Cost control: Better budget management with predictable ordering.",
+        "Improved planning: Streamline meal logistics for your organization.",
+        "Flexibility: Easily adjust schedules to accommodate changing needs."
+      ],
+      "alt": "Benefits of Scheduled Orders"
+    },
+    "getStarted": {
+      "title": "Get Started",
+      "description": "Ready to simplify your team's meal planning with Scheduled Orders? Contact our team to learn more about implementing this feature for your organization and start enjoying the benefits of automated meal management."
+    }
+  },
+  "TeamManagementPage": {
+    "title": "Team Management",
+    "introduction": "Grub's Team Management feature allows you to easily manage teams, departments, and individual meal preferences all in one place, streamlining your corporate dining experience.",
+    "introductionAlt": "Team Management Overview",
+    "nav": {
+      "introduction": "Introduction",
+      "keyFeatures": "Key Features",
+      "groupOrdering": "Group Ordering",
+      "dietaryManagement": "Dietary Management",
+      "budgetControl": "Budget Control",
+      "howItWorks": "How It Works",
+      "benefits": "Benefits",
+      "getStarted": "Get Started"
+    },
+    "keyFeatures": {
+      "groupOrdering": {
+        "title": "Group Ordering",
+        "description": "Easily coordinate meals for team meetings, events, or daily lunches with our intuitive group ordering system.",
+        "alt": "Group Ordering Feature"
+      },
+      "dietaryManagement": {
+        "title": "Dietary Management",
+        "description": "Keep track of team members' dietary restrictions and preferences to ensure everyone's needs are met.",
+        "alt": "Dietary Management System"
+      },
+      "budgetControl": {
+        "title": "Budget Control",
+        "description": "Set and manage meal budgets for individuals, teams, or departments to keep costs under control.",
+        "alt": "Budget Control Dashboard"
+      }
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "steps": [
+        "Set up teams and departments within the Grub platform.",
+        "Invite team members and assign roles (e.g., team lead, member).",
+        "Configure meal preferences and dietary restrictions for each member.",
+        "Set budgets and ordering permissions as needed.",
+        "Use the platform to coordinate group orders and manage team meals."
+      ],
+      "alt": "How Team Management Works"
+    },
+    "benefits": {
+      "title": "Benefits",
+      "list": [
+        "Improved team coordination and communication around meals.",
+        "Enhanced employee satisfaction through personalized meal experiences.",
+        "Better cost control and budget management for corporate dining.",
+        "Time savings for administrators and team leads.",
+        "Increased visibility into team dining habits and preferences."
+      ],
+      "alt": "Benefits of Team Management"
+    },
+    "getStarted": {
+      "title": "Get Started",
+      "description": "Ready to revolutionize how you manage team meals and corporate dining? Contact our team to learn more about implementing Grub's Team Management feature for your organization."
+    }
+  },
+  "FeaturesPage": {
+    "title": "Grub Features",
+    "description": "Discover how Grub revolutionizes meal management for your team. Our comprehensive set of features is designed to streamline ordering, simplify accounting, and enhance the overall dining experience for your employees."
+  },
+  "NotFound": {
+    "title": "404",
+    "description": "Oops! Page not found.",
+    "buttonText": "Go back to home"
   }
 }

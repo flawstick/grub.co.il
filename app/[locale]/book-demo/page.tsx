@@ -15,6 +15,7 @@ import {
   ArrowLeft,
   Check,
   Home,
+  ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -25,8 +26,10 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { cn } from "@/lib/utils";
+import { cn, isRTL } from "@/lib/utils";
 import { CalendarIcon, Clock } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { useDirection } from "@/hooks/use-direction";
 
 const steps = ["Organization Type", "Company Details", "Meeting Preferences"];
 
@@ -42,6 +45,10 @@ export default function BookDemo() {
     time: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const t = useTranslations("BookDemo");
+  const { direction: dir } = useDirection(); // "ltr" or "rtl"
+  const isRtl = dir === "rtl";
 
   const handleOrganizationTypeSelect = (type: string) => {
     setFormData({ ...formData, organizationType: type });
@@ -59,7 +66,6 @@ export default function BookDemo() {
     e: React.FormEvent<HTMLFormElement>,
   ) => {
     e.preventDefault();
-    // Here you would typically handle the form submission
     console.log("Form submitted:", formData);
     toast({
       title: "Demo Requested",
@@ -87,17 +93,24 @@ export default function BookDemo() {
     setIsSubmitted(false);
   };
 
+  /**
+   * We modify slideVariants to check if we're in RTL mode.
+   * If direction > 0 (going forward):
+   *  - LTR: slide in from right ("100%") -> center -> slide out to left ("-100%")
+   *  - RTL: slide in from left ("-100%") -> center -> slide out to right ("100%")
+   * If direction < 0 (going backward), we reverse it.
+   */
   const slideVariants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? "100%" : "-100%",
+    enter: (dirDelta: number) => ({
+      x: dirDelta > 0 ? (isRtl ? "-100%" : "100%") : isRtl ? "100%" : "-100%",
       opacity: 0,
     }),
     center: {
       x: 0,
       opacity: 1,
     },
-    exit: (direction: number) => ({
-      x: direction > 0 ? "-100%" : "100%",
+    exit: (dirDelta: number) => ({
+      x: dirDelta > 0 ? (isRtl ? "100%" : "-100%") : isRtl ? "-100%" : "100%",
       opacity: 0,
     }),
   };
@@ -110,11 +123,16 @@ export default function BookDemo() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        Book a Demo
+        {t("title")}
       </motion.h1>
+
       {!isSubmitted && (
-        <ProgressTracker steps={steps} currentStep={currentStep} />
+        <ProgressTracker
+          steps={steps.map((step) => t(`steps.${step}`))}
+          currentStep={currentStep}
+        />
       )}
+
       <AnimatePresence mode="wait" custom={direction}>
         <motion.div
           key={isSubmitted ? "thank-you" : currentStep}
@@ -142,7 +160,7 @@ export default function BookDemo() {
                 transition={{ delay: 0.3, duration: 0.5 }}
                 className="text-2xl font-bold mb-4"
               >
-                Thank you for your interest!
+                {t("thankYouTitle")}
               </motion.h2>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -150,7 +168,7 @@ export default function BookDemo() {
                 transition={{ delay: 0.5, duration: 0.5 }}
                 className="mb-8"
               >
-                We'll be in touch with you soon to schedule your demo.
+                {t("thankYouDescription")}
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -158,11 +176,11 @@ export default function BookDemo() {
                 transition={{ delay: 0.7, duration: 0.5 }}
                 className="flex justify-center space-x-4"
               >
-                <Button onClick={handleReset}>Book Another Demo</Button>
+                <Button onClick={handleReset}>{t("bookAnotherDemo")}</Button>
                 <Button asChild variant="outline">
                   <Link href="/">
                     <Home className="mr-2 h-4 w-4" />
-                    Return to Home
+                    {t("returnToHome")}
                   </Link>
                 </Button>
               </motion.div>
@@ -170,7 +188,7 @@ export default function BookDemo() {
           ) : currentStep === 0 ? (
             <div className="space-y-6">
               <h2 className="text-2xl font-semibold text-center mb-4">
-                I come to you as a...
+                {t("organizationTypeTitle")}
               </h2>
               <div className="grid md:grid-cols-2 gap-8">
                 <Card
@@ -179,10 +197,11 @@ export default function BookDemo() {
                 >
                   <CardContent className="flex flex-col items-center justify-center h-full p-6">
                     <Building2 className="w-16 h-16 mb-4 text-[#FD8000]" />
-                    <h3 className="text-2xl font-semibold mb-2">Company</h3>
+                    <h3 className="text-2xl font-semibold mb-2">
+                      {t("organizationTypeCompany")}
+                    </h3>
                     <p className="text-center text-gray-600">
-                      I represent a company looking to improve our meal
-                      management
+                      {t("organizationTypeCompanyDescription")}
                     </p>
                   </CardContent>
                 </Card>
@@ -192,10 +211,11 @@ export default function BookDemo() {
                 >
                   <CardContent className="flex flex-col items-center justify-center h-full p-6">
                     <UtensilsCrossed className="w-16 h-16 mb-4 text-[#FD8000]" />
-                    <h3 className="text-2xl font-semibold mb-2">Restaurant</h3>
+                    <h3 className="text-2xl font-semibold mb-2">
+                      {t("organizationTypeRestaurant")}
+                    </h3>
                     <p className="text-center text-gray-600">
-                      I represent a restaurant interested in partnering with
-                      Grub
+                      {t("organizationTypeRestaurantDescription")}
                     </p>
                   </CardContent>
                 </Card>
@@ -204,7 +224,7 @@ export default function BookDemo() {
           ) : currentStep === 1 ? (
             <form onSubmit={handleCompanyDetailsSubmit} className="space-y-6">
               <div>
-                <Label htmlFor="companyName">Company Name</Label>
+                <Label htmlFor="companyName">{t("companyNameLabel")}</Label>
                 <Input
                   id="companyName"
                   value={formData.companyName}
@@ -221,13 +241,18 @@ export default function BookDemo() {
                   variant="outline"
                   className="flex items-center"
                 >
-                  <ArrowLeft className="mr-2 h-4 w-4" /> Back
+                  {isRtl ? (
+                    <ArrowRight className="mr-2 h-4 w-4" />
+                  ) : (
+                    <ArrowLeft className="mr-2 h-4 w-4" />
+                  )}
+                  {t("backButton")}
                 </Button>
                 <Button
                   type="submit"
-                  className="bg-[#FD8000] hover:bg-[#FD8000]/90 dark:bg-[#FFA500] dark:hover:bg-[#FFA500]/90"
+                  className="bg-[#FD8000] hover:bg-[#FD8000]/90 dark:bg-[#FFA500] dark:hover:bg-[#FFA500]/90 dark:text-white"
                 >
-                  Next
+                  {t("nextButton")}
                 </Button>
               </div>
             </form>
@@ -244,24 +269,26 @@ export default function BookDemo() {
                   }
                 >
                   <TabsList className="grid w-full grid-cols-2">
-                    <TabsTrigger value="on-location">On Location</TabsTrigger>
-                    <TabsTrigger value="google-meet">Google Meet</TabsTrigger>
+                    <TabsTrigger value="on-location">
+                      {t("onLocation")}
+                    </TabsTrigger>
+                    <TabsTrigger value="google-meet">
+                      {t("googleMeet")}
+                    </TabsTrigger>
                   </TabsList>
                   <TabsContent value="on-location">
                     <p className="text-sm text-gray-500 mt-2">
-                      We'll come to your location for the demo.
+                      {t("onLocationDescription")}
                     </p>
                   </TabsContent>
                   <TabsContent value="google-meet">
                     <p className="text-sm text-gray-500 mt-2">
-                      We'll send you a Google Meet link for the demo.
+                      {t("googleMeetDescription")}
                     </p>
                   </TabsContent>
                 </Tabs>
                 <div>
-                  <Label htmlFor="message">
-                    Tell us more about your needs:
-                  </Label>
+                  <Label htmlFor="message">{t("messageLabel")}</Label>
                   <Textarea
                     id="message"
                     value={formData.message}
@@ -273,7 +300,7 @@ export default function BookDemo() {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex flex-col space-y-2">
-                    <Label htmlFor="date">Preferred Date</Label>
+                    <Label htmlFor="date">{t("preferredDateLabel")}</Label>
                     <Popover>
                       <PopoverTrigger asChild>
                         <Button
@@ -287,7 +314,7 @@ export default function BookDemo() {
                           {formData.date ? (
                             format(formData.date, "PPP")
                           ) : (
-                            <span>Pick a date</span>
+                            <span>{t("pickDatePlaceholder")}</span>
                           )}
                         </Button>
                       </PopoverTrigger>
@@ -304,7 +331,7 @@ export default function BookDemo() {
                     </Popover>
                   </div>
                   <div className="flex flex-col space-y-2">
-                    <Label htmlFor="time">Preferred Time</Label>
+                    <Label htmlFor="time">{t("preferredTimeLabel")}</Label>
                     <div className="flex">
                       <Input
                         type="time"
@@ -320,10 +347,12 @@ export default function BookDemo() {
                         type="button"
                         size="icon"
                         variant="outline"
-                        className="ml-2"
+                        className="ltr:ml-2 rtl:mr-2"
                       >
                         <Clock className="h-4 w-4" />
-                        <span className="sr-only">Choose time</span>
+                        <span className="sr-only">
+                          {t("chooseTimePlaceholder")}
+                        </span>
                       </Button>
                     </div>
                   </div>
@@ -335,13 +364,18 @@ export default function BookDemo() {
                     variant="outline"
                     className="flex items-center"
                   >
-                    <ArrowLeft className="mr-2 h-4 w-4" /> Back
+                    {isRtl ? (
+                      <ArrowRight className="mr-2 h-4 w-4" />
+                    ) : (
+                      <ArrowLeft className="mr-2 h-4 w-4" />
+                    )}
+                    {t("backButton")}
                   </Button>
                   <Button
                     type="submit"
-                    className="bg-[#FD8000] hover:bg-[#FD8000]/90 dark:bg-[#FFA500] dark:hover:bg-[#FFA500]/90"
+                    className="bg-[#FD8000] hover:bg-[#FD8000]/90 dark:bg-[#FFA500] dark:hover:bg-[#FFA500]/90 dark:text-white"
                   >
-                    Submit
+                    {t("submitButton")}
                   </Button>
                 </div>
               </form>
