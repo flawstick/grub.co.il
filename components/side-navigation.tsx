@@ -41,7 +41,7 @@ export function SideNavigation({ items }: SideNavigationProps) {
   }, [items]);
 
   return (
-    <nav className="sticky top-24 max-h-[calc(100vh-6rem)] overflow-auto p-4">
+    <nav className="hidden md:block sticky top-24 max-h-[calc(100vh-6rem)] overflow-auto p-4">
       <ul className="space-y-2">
         {items.map((item) => (
           <li key={item.id}>

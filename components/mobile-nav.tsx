@@ -114,7 +114,7 @@ export function MobileNav() {
   ];
 
   useEffect(() => {
-    const initialOpenState = navItems.reduce(
+    let initialOpenState = navItems.reduce(
       (acc, item) => {
         if (item.subItems) {
           acc[item.title] = true;
@@ -123,6 +123,7 @@ export function MobileNav() {
       },
       {} as Record<string, boolean>,
     );
+    initialOpenState[t("features.title")] = false;
     setOpenItems(initialOpenState);
   }, []);
 

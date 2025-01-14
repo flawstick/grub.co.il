@@ -35,6 +35,8 @@ import { GrubIcon } from "./icons";
 import { LocaleSwitcher } from "./locale-select";
 import { useTranslations } from "next-intl";
 import { useDirection } from "@/hooks/use-direction";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { useTheme } from "next-themes";
 
 export function Navigation() {
   const t = useTranslations("Navigation");
@@ -42,15 +44,27 @@ export function Navigation() {
   const [isVisible, setIsVisible] = React.useState(true);
   const [lastScrollY, setLastScrollY] = React.useState(0);
   const { direction } = useDirection();
+  const isMobile = useIsMobile();
+  const { resolvedTheme } = useTheme();
 
   React.useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY > lastScrollY) {
-        setIsVisible(false);
+      if (!isMobile) {
+        if (currentScrollY > lastScrollY) {
+          setIsVisible(false);
+        } else {
+          setIsVisible(true);
+        }
       } else {
-        setIsVisible(true);
+        if (currentScrollY > 0) {
+          if (currentScrollY > lastScrollY) {
+            setIsVisible(false);
+          } else {
+            setIsVisible(true);
+          }
+        }
       }
 
       setLastScrollY(currentScrollY);
@@ -62,165 +76,175 @@ export function Navigation() {
   }, [lastScrollY]);
 
   return (
-    <div
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 bg-background border-b transition-transform duration-300",
-        isVisible ? "translate-y-0" : "-translate-y-full",
-      )}
-    >
-      <div className="flex h-16 items-center px-4">
-        <MobileNav />
-        <Link href="/" className="ltr:mr-6 rtl:ml-6 flex items-center gap-x-2">
-          <GrubIcon size={36} />
-          <span className="text-2xl font-bold text-[#FD8000] dark:text-[#FFA500]">
-            {t("grub")}
-          </span>
-        </Link>
-        <NavigationMenu className="hidden md:flex" dir={direction}>
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <Link href="/about" legacyBehavior passHref>
-                <NavigationMenuLink
+    <>
+      <meta
+        name="theme-color"
+        content={resolvedTheme === "dark" ? "#191816" : "#FFFFFF"}
+      />
+      <div
+        className={cn(
+          "fixed top-0 left-0 right-0 z-50 bg-background border-b transition-transform duration-300",
+          isVisible ? "translate-y-0" : "-translate-y-full",
+        )}
+      >
+        <div className="flex h-16 items-center px-4">
+          <MobileNav />
+          <Link
+            href="/"
+            className="ltr:mr-6 rtl:ml-6 flex items-center gap-x-2"
+          >
+            <GrubIcon size={36} />
+            <span className="text-2xl font-bold text-[#FD8000] dark:text-[#FFA500]">
+              {t("grub")}
+            </span>
+          </Link>
+          <NavigationMenu className="hidden md:flex" dir={direction}>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <Link href="/about" legacyBehavior passHref>
+                  <NavigationMenuLink
+                    className={cn(
+                      navigationMenuTriggerStyle(),
+                      pathname === "/about" &&
+                        "bg-accent text-accent-foreground",
+                    )}
+                  >
+                    {t("about")}
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger
                   className={cn(
-                    navigationMenuTriggerStyle(),
-                    pathname === "/about" && "bg-accent text-accent-foreground",
-                  )}
-                >
-                  {t("about")}
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger
-                className={cn(
-                  pathname.startsWith("/features") &&
-                    "bg-accent text-accent-foreground",
-                )}
-              >
-                {t("features.title")}
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid gap-3 p-6 md:w-[500px] lg:w-[600px] grid-cols-2 grid-rows-3">
-                  <ListItem
-                    href="/features/easy-employee-meals"
-                    title={t("features.easyEmployeeMeals")}
-                    icon={Utensils}
-                  >
-                    {t("features.easyEmployeeMealsDescription")}
-                  </ListItem>
-                  <ListItem
-                    href="/features/low-restaurant-fees"
-                    title={t("features.lowRestaurantFees")}
-                    icon={Building}
-                  >
-                    {t("features.lowRestaurantFeesDescription")}
-                  </ListItem>
-                  <ListItem
-                    href="/features/integrated-payroll-deductions"
-                    title={t("features.integratedPayroll")}
-                    icon={CreditCard}
-                  >
-                    {t("features.integratedPayrollDescription")}
-                  </ListItem>
-                  <ListItem
-                    href="/features/team-management"
-                    title={t("features.teamManagement")}
-                    icon={Users}
-                  >
-                    {t("features.teamManagementDescription")}
-                  </ListItem>
-                  <ListItem
-                    href="/features/scheduled-orders"
-                    title={t("features.scheduledOrders")}
-                    icon={Clock}
-                  >
-                    {t("features.scheduledOrdersDescription")}
-                  </ListItem>
-                  <ListItem
-                    href="/features/customizable-menus"
-                    title={t("features.customizableMenus")}
-                    icon={ChefHat}
-                  >
-                    {t("features.customizableMenusDescription")}
-                  </ListItem>
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger
-                className={cn(
-                  pathname.startsWith("/resources") &&
-                    "bg-accent text-accent-foreground",
-                )}
-              >
-                {t("resources.title")}
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid gap-3 p-6 md:w-[500px] lg:w-[600px] grid-cols-2 grid-rows-2">
-                  <ListItem
-                    href="/download"
-                    title={t("resources.downloadApp")}
-                    icon={Download}
-                  >
-                    {t("resources.downloadAppDescription")}
-                  </ListItem>
-                  <ListItem
-                    href="https://company.grub.co.il/"
-                    title={t("resources.companyConsole")}
-                    icon={LayoutDashboard}
-                  >
-                    {t("resources.companyConsoleDescription")}
-                  </ListItem>
-                  <ListItem
-                    href="https://restaurant.grub.co.il/"
-                    title={t("resources.restaurantConsole")}
-                    icon={Store}
-                  >
-                    {t("resources.restaurantConsoleDescription")}
-                  </ListItem>
-                  <ListItem
-                    href="/contact"
-                    title={t("resources.contact")}
-                    icon={Mail}
-                  >
-                    {t("resources.contactDescription")}
-                  </ListItem>
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link href="/testimonials" legacyBehavior passHref>
-                <NavigationMenuLink
-                  className={cn(
-                    navigationMenuTriggerStyle(),
-                    pathname === "/testimonials" &&
+                    pathname.startsWith("/features") &&
                       "bg-accent text-accent-foreground",
                   )}
                 >
-                  {t("testimonials")}
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
-        <div className="ltr:ml-auto rtl:mr-auto flex items-center gap-x-2">
-          <ThemeToggle className="hidden md:flex" />
-          <LocaleSwitcher />
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="hidden md:block"
-          >
-            <Button
-              asChild
-              className="bg-gradient-to-r from-[#FD8000] to-[#FFA500] hover:from-[#FD8000]/90 hover:to-[#FFA500]/90 text-white"
+                  {t("features.title")}
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid gap-3 p-6 md:w-[500px] lg:w-[600px] grid-cols-2 grid-rows-3">
+                    <ListItem
+                      href="/features/easy-employee-meals"
+                      title={t("features.easyEmployeeMeals")}
+                      icon={Utensils}
+                    >
+                      {t("features.easyEmployeeMealsDescription")}
+                    </ListItem>
+                    <ListItem
+                      href="/features/low-restaurant-fees"
+                      title={t("features.lowRestaurantFees")}
+                      icon={Building}
+                    >
+                      {t("features.lowRestaurantFeesDescription")}
+                    </ListItem>
+                    <ListItem
+                      href="/features/integrated-payroll-deductions"
+                      title={t("features.integratedPayroll")}
+                      icon={CreditCard}
+                    >
+                      {t("features.integratedPayrollDescription")}
+                    </ListItem>
+                    <ListItem
+                      href="/features/team-management"
+                      title={t("features.teamManagement")}
+                      icon={Users}
+                    >
+                      {t("features.teamManagementDescription")}
+                    </ListItem>
+                    <ListItem
+                      href="/features/scheduled-orders"
+                      title={t("features.scheduledOrders")}
+                      icon={Clock}
+                    >
+                      {t("features.scheduledOrdersDescription")}
+                    </ListItem>
+                    <ListItem
+                      href="/features/customizable-menus"
+                      title={t("features.customizableMenus")}
+                      icon={ChefHat}
+                    >
+                      {t("features.customizableMenusDescription")}
+                    </ListItem>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger
+                  className={cn(
+                    pathname.startsWith("/resources") &&
+                      "bg-accent text-accent-foreground",
+                  )}
+                >
+                  {t("resources.title")}
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid gap-3 p-6 md:w-[500px] lg:w-[600px] grid-cols-2 grid-rows-2">
+                    <ListItem
+                      href="/download"
+                      title={t("resources.downloadApp")}
+                      icon={Download}
+                    >
+                      {t("resources.downloadAppDescription")}
+                    </ListItem>
+                    <ListItem
+                      href="https://company.grub.co.il/"
+                      title={t("resources.companyConsole")}
+                      icon={LayoutDashboard}
+                    >
+                      {t("resources.companyConsoleDescription")}
+                    </ListItem>
+                    <ListItem
+                      href="https://restaurant.grub.co.il/"
+                      title={t("resources.restaurantConsole")}
+                      icon={Store}
+                    >
+                      {t("resources.restaurantConsoleDescription")}
+                    </ListItem>
+                    <ListItem
+                      href="/contact"
+                      title={t("resources.contact")}
+                      icon={Mail}
+                    >
+                      {t("resources.contactDescription")}
+                    </ListItem>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link href="/testimonials" legacyBehavior passHref>
+                  <NavigationMenuLink
+                    className={cn(
+                      navigationMenuTriggerStyle(),
+                      pathname === "/testimonials" &&
+                        "bg-accent text-accent-foreground",
+                    )}
+                  >
+                    {t("testimonials")}
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+          <div className="ltr:ml-auto rtl:mr-auto flex items-center gap-x-2">
+            <ThemeToggle />
+            <LocaleSwitcher />
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="hidden md:block"
             >
-              <Link href="/book-demo">{t("bookDemo")}</Link>
-            </Button>
-          </motion.div>
+              <Button
+                asChild
+                className="bg-gradient-to-r from-[#FD8000] to-[#FFA500] hover:from-[#FD8000]/90 hover:to-[#FFA500]/90 text-white"
+              >
+                <Link href="/book-demo">{t("bookDemo")}</Link>
+              </Button>
+            </motion.div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
