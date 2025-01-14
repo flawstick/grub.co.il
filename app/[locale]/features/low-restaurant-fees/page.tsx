@@ -104,9 +104,11 @@ export default function LowRestaurantFeesPage() {
                 {t("howItWorks.title")}
               </h2>
               <ol className="list-decimal list-inside space-y-4 mb-8 text-gray-600 dark:text-gray-300">
-                {t.rich("howItWorks.steps", {
-                  li: (chunk) => <li>{chunk}</li>,
-                })}
+                <li>{t("howItWorks.step1")}</li>
+                <li>{t("howItWorks.step2")}</li>
+                <li>{t("howItWorks.step3")}</li>
+                <li>{t("howItWorks.step4")}</li>
+                <li>{t("howItWorks.step5")}</li>
               </ol>
               <Image
                 src="/placeholder.svg?height=400&width=600"
@@ -122,19 +124,22 @@ export default function LowRestaurantFeesPage() {
                 {t("caseStudies.title")}
               </h2>
               <div className="grid md:grid-cols-2 gap-8 mb-8">
-                {["techCorpSavings", "localBistroGrowth"].map((caseStudy) => (
-                  <div
-                    key={caseStudy}
-                    className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
-                  >
-                    <h3 className="text-xl font-semibold mb-2 text-[#FD8000] dark:text-[#FFA500]">
-                      {t(`caseStudies.${caseStudy}.title`)}
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-300">
-                      {t(`caseStudies.${caseStudy}.description`)}
-                    </p>
-                  </div>
-                ))}
+                <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                  <h3 className="text-xl font-semibold mb-2 text-[#FD8000] dark:text-[#FFA500]">
+                    {t("caseStudies.techCorpSavings.title")}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    {t("caseStudies.techCorpSavings.description")}
+                  </p>
+                </div>
+                <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                  <h3 className="text-xl font-semibold mb-2 text-[#FD8000] dark:text-[#FFA500]">
+                    {t("caseStudies.localBistroGrowth.title")}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    {t("caseStudies.localBistroGrowth.description")}
+                  </p>
+                </div>
               </div>
             </motion.section>
 

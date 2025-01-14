@@ -826,26 +826,22 @@
     },
     "howItWorks": {
       "title": "How It Works",
-      "steps": [
-        "Consult with our menu specialists to understand your team's preferences.",
-        "Work with partner restaurants to create custom dishes or modify existing ones.",
-        "Set up your personalized menu within the Grub platform.",
-        "Configure dietary options and allergen information for each item.",
-        "Implement seasonal rotations and special event menus as desired.",
-        "Gather feedback from your team and make adjustments as needed."
-      ],
+      "step1": "Consult with our menu specialists to understand your team's preferences.",
+      "step2": "Work with partner restaurants to create custom dishes or modify existing ones.",
+      "step3": "Set up your personalized menu within the Grub platform.",
+      "step4": "Configure dietary options and allergen information for each item.",
+      "step5": "Implement seasonal rotations and special event menus as desired.",
+      "step6": "Gather feedback from your team and make adjustments as needed.",
       "alt": "How Customizable Menus Work"
     },
     "benefits": {
       "title": "Benefits",
-      "items": [
-        "Increased employee satisfaction with personalized meal options.",
-        "Improved inclusivity by catering to various dietary needs and preferences.",
-        "Enhanced company culture through curated dining experiences.",
-        "Better control over nutrition and ingredient quality.",
-        "Flexibility to adapt menus for special events or company milestones.",
-        "Support for local restaurants and seasonal produce."
-      ],
+      "item1": "Increased employee satisfaction with personalized meal options.",
+      "item2": "Improved inclusivity by catering to various dietary needs and preferences.",
+      "item3": "Enhanced company culture through curated dining experiences.",
+      "item4": "Better control over nutrition and ingredient quality.",
+      "item5": "Flexibility to adapt menus for special events or company milestones.",
+      "item6": "Support for local restaurants and seasonal produce.",
       "alt": "Benefits of Customizable Menus"
     },
     "getStarted": {
@@ -887,27 +883,23 @@
     },
     "howItWorks": {
       "title": "How It Works",
-      "steps": [
-        "Employees log in to the Grub platform.",
-        "Browse available restaurants and menus.",
-        "Select and customize meals.",
-        "Add items to cart and review order.",
-        "Choose payment method (including payroll deduction if enabled).",
-        "Submit order and receive confirmation.",
-        "Enjoy the meal when it arrives!"
-      ],
+      "step1": "Employees log in to the Grub platform.",
+      "step2": "Browse available restaurants and menus.",
+      "step3": "Select and customize meals.",
+      "step4": "Add items to cart and review order.",
+      "step5": "Choose payment method (including payroll deduction if enabled).",
+      "step6": "Submit order and receive confirmation.",
+      "step7": "Enjoy the meal when it arrives!",
       "alt": "How Easy Employee Meals Work"
     },
     "benefits": {
       "title": "Benefits",
-      "items": [
-        "Save time and reduce stress associated with meal planning.",
-        "Increase employee satisfaction with a wide variety of food options.",
-        "Promote team bonding through shared meals and group orders.",
-        "Ensure dietary needs and preferences are met for all employees.",
-        "Streamline the payment process with integrated payroll deductions.",
-        "Support local restaurants and contribute to the community."
-      ],
+      "item1": "Save time and reduce stress associated with meal planning.",
+      "item2": "Increase employee satisfaction with a wide variety of food options.",
+      "item3": "Promote team bonding through shared meals and group orders.",
+      "item4": "Ensure dietary needs and preferences are met for all employees.",
+      "item5": "Streamline the payment process with integrated payroll deductions.",
+      "item6": "Support local restaurants and contribute to the community.",
       "alt": "Benefits of Easy Employee Meals"
     },
     "getStarted": {
@@ -949,24 +941,20 @@
     },
     "howItWorks": {
       "title": "How It Works",
-      "steps": [
-        "Grub integrates with your existing payroll system.",
-        "Employees order meals through the Grub platform.",
-        "Meal expenses are automatically tracked and calculated.",
-        "Deductions are processed during the regular payroll cycle.",
-        "Detailed reports are generated for accounting and tax purposes."
-      ],
+      "step1": "Grub integrates with your existing payroll system.",
+      "step2": "Employees order meals through the Grub platform.",
+      "step3": "Meal expenses are automatically tracked and calculated.",
+      "step4": "Deductions are processed during the regular payroll cycle.",
+      "step5": "Detailed reports are generated for accounting and tax purposes.",
       "alt": "How Integrated Payroll Deductions Work"
     },
     "security": {
       "title": "Security and Compliance",
       "description": "Grub's Integrated Payroll Deductions feature is designed with security and compliance in mind. We use industry-standard encryption and follow all relevant data protection regulations to ensure the safety and privacy of your company's and employees' information.",
-      "items": [
-        "End-to-end encryption for all data transfers.",
-        "Regular security audits and penetration testing.",
-        "Compliance with GDPR, CCPA, and other applicable regulations.",
-        "Secure API integrations with major payroll providers."
-      ],
+      "item1": "End-to-end encryption for all data transfers.",
+      "item2": "Regular security audits and penetration testing.",
+      "item3": "Compliance with GDPR, CCPA, and other applicable regulations.",
+      "item4": "Secure API integrations with major payroll providers.",
       "alt": "Security and Compliance Measures"
     },
     "getStarted": {
@@ -1008,13 +996,11 @@
     },
     "howItWorks": {
       "title": "How It Works",
-      "steps": [
-        "Grub negotiates competitive rates with local restaurants.",
-        "Restaurants are integrated into the Grub platform.",
-        "Your company selects preferred restaurant partners.",
-        "Employees order from these restaurants at discounted rates.",
-        "Grub handles all payments and logistics."
-      ],
+      "step1": "Grub negotiates competitive rates with local restaurants.",
+      "step2": "Restaurants are integrated into the Grub platform.",
+      "step3": "Your company selects preferred restaurant partners.",
+      "step4": "Employees order from these restaurants at discounted rates.",
+      "step5": "Grub handles all payments and logistics.",
       "alt": "How Low Restaurant Fees Work"
     },
     "caseStudies": {
@@ -1066,26 +1052,22 @@
     },
     "howItWorks": {
       "title": "How It Works",
-      "steps": [
-        "Access the Scheduled Orders feature in your Grub dashboard.",
-        "Select the individuals or teams for whom you want to set up recurring orders.",
-        "Choose the frequency, days, and times for meal deliveries.",
-        "Select meals or set up meal rotations based on preferences.",
-        "Review and confirm the scheduled orders.",
-        "Grub automatically processes and delivers meals according to the schedule."
-      ],
+      "step1": "Access the Scheduled Orders feature in your Grub dashboard.",
+      "step2": "Select the individuals or teams for whom you want to set up recurring orders.",
+      "step3": "Choose the frequency, days, and times for meal deliveries.",
+      "step4": "Select meals or set up meal rotations based on preferences.",
+      "step5": "Review and confirm the scheduled orders.",
+      "step6": "Grub automatically processes and delivers meals according to the schedule.",
       "alt": "How Scheduled Orders Work"
     },
     "benefits": {
       "title": "Benefits",
-      "list": [
-        "Time-saving: Eliminate the need for daily manual order placement.",
-        "Consistency: Ensure regular meal deliveries for your team.",
-        "Customization: Cater to individual preferences and dietary needs.",
-        "Cost control: Better budget management with predictable ordering.",
-        "Improved planning: Streamline meal logistics for your organization.",
-        "Flexibility: Easily adjust schedules to accommodate changing needs."
-      ],
+      "item1": "Time-saving: Eliminate the need for daily manual order placement.",
+      "item2": "Consistency: Ensure regular meal deliveries for your team.",
+      "item3": "Customization: Cater to individual preferences and dietary needs.",
+      "item4": "Cost control: Better budget management with predictable ordering.",
+      "item5": "Improved planning: Streamline meal logistics for your organization.",
+      "item6": "Flexibility: Easily adjust schedules to accommodate changing needs.",
       "alt": "Benefits of Scheduled Orders"
     },
     "getStarted": {
@@ -1126,24 +1108,20 @@
     },
     "howItWorks": {
       "title": "How It Works",
-      "steps": [
-        "Set up teams and departments within the Grub platform.",
-        "Invite team members and assign roles (e.g., team lead, member).",
-        "Configure meal preferences and dietary restrictions for each member.",
-        "Set budgets and ordering permissions as needed.",
-        "Use the platform to coordinate group orders and manage team meals."
-      ],
+      "step1": "Set up teams and departments within the Grub platform.",
+      "step2": "Invite team members and assign roles (e.g., team lead, member).",
+      "step3": "Configure meal preferences and dietary restrictions for each member.",
+      "step4": "Set budgets and ordering permissions as needed.",
+      "step5": "Use the platform to coordinate group orders and manage team meals.",
       "alt": "How Team Management Works"
     },
     "benefits": {
       "title": "Benefits",
-      "list": [
-        "Improved team coordination and communication around meals.",
-        "Enhanced employee satisfaction through personalized meal experiences.",
-        "Better cost control and budget management for corporate dining.",
-        "Time savings for administrators and team leads.",
-        "Increased visibility into team dining habits and preferences."
-      ],
+      "item1": "Improved team coordination and communication around meals.",
+      "item2": "Enhanced employee satisfaction through personalized meal experiences.",
+      "item3": "Better cost control and budget management for corporate dining.",
+      "item4": "Time savings for administrators and team leads.",
+      "item5": "Increased visibility into team dining habits and preferences.",
       "alt": "Benefits of Team Management"
     },
     "getStarted": {

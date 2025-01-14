@@ -7,16 +7,21 @@ import { Toaster } from "@/components/ui/toaster";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
-import { getMessages, getTranslations } from "next-intl/server";
+import {
+  getMessages,
+  getTranslations,
+  setRequestLocale,
+} from "next-intl/server";
 import { isRTL } from "@/lib/utils";
 
-const fredoka = Fredoka({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  variable: "--font-fredoka",
-});
+// 1. Generate static params for all locales
+//    This ensures Next.js knows about the localized routes at build time.
+export function generateStaticParams() {
+  // Each object in this array will correspond to a route segment like /[locale]
+  return routing.locales.map((locale) => ({ locale }));
+}
 
-// 1. Generate localized metadata
+// 2. Generate localized metadata for each locale
 export async function generateMetadata({
   params,
 }: {
@@ -30,32 +35,25 @@ export async function generateMetadata({
   }
 
   // Retrieve translations for this locale
-  // (Assuming 'common' is where your metadata strings live)
+  // 'meta' is the namespace you used in your example
   const t = await getTranslations("meta");
 
   // The base domain of your site
   const baseUrl = "https://grub.co.il";
 
-  // Construct a canonical URL for each locale
-  // If your default locale is Hebrew ("he"), no prefix for Hebrew, "/en" for English, etc.
+  // Construct a canonical URL
   const isDefaultLocale = locale === routing.defaultLocale;
   const localePath = isDefaultLocale ? "/he" : `/${locale}`;
   const canonicalUrl = `${baseUrl}${localePath}`;
 
-  // Return metadata fields recognized by Next.js 13
   return {
     title: t("title"),
     description: t("description"),
-
-    // Standard SEO fields
     keywords: t("keywords") ?? "",
     robots: {
       index: true,
       follow: true,
     },
-
-    // Alternates for multi-language sites (important for SEO)
-    // This helps search engines understand there's a Hebrew and English version
     alternates: {
       canonical: canonicalUrl,
       languages: {
@@ -63,8 +61,6 @@ export async function generateMetadata({
         en: `${baseUrl}/en`,
       },
     },
-
-    // Open Graph metadata
     openGraph: {
       title: t("title"),
       description: t("description"),
@@ -82,8 +78,6 @@ export async function generateMetadata({
           ]
         : [],
     },
-
-    // Twitter Card metadata
     twitter: {
       card: "summary_large_image",
       title: t("title"),
@@ -93,7 +87,14 @@ export async function generateMetadata({
   };
 }
 
-// 2. The layout component itself
+// 3. Font definition
+const fredoka = Fredoka({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-fredoka",
+});
+
+// 4. The layout component
 export default async function RootLayout({
   children,
   params: { locale },
@@ -106,7 +107,10 @@ export default async function RootLayout({
     notFound();
   }
 
-  // Provide messages to the client side
+  // Tell next-intl to use this locale for the current request
+  setRequestLocale(locale);
+
+  // Get the messages needed for this locale
   const messages = await getMessages();
   const direction = isRTL(locale) ? "rtl" : "ltr";
 
@@ -114,7 +118,7 @@ export default async function RootLayout({
     <html lang={locale} suppressHydrationWarning>
       <body className={fredoka.variable} dir={direction}>
         <NextIntlClientProvider messages={messages} locale={locale}>
-          <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          <ThemeProvider attribute="class" defaultTheme="light">
             <div className="flex flex-col min-h-screen">
               <Navigation />
               <main className="flex-grow pt-16">{children}</main>

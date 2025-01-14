@@ -11,9 +11,9 @@ export default function ScheduledOrdersPage() {
 
   const navItems = [
     { id: "introduction", title: t("nav.introduction") },
-    { id: "key-features", title: t("nav.keyFeatures") },
     {
       id: "key-features",
+      title: t("nav.keyFeatures"),
       subItems: [
         { id: "recurring-orders", title: t("nav.recurringOrders") },
         { id: "flexible-scheduling", title: t("nav.flexibleScheduling") },
@@ -36,7 +36,7 @@ export default function ScheduledOrdersPage() {
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
-            <SideNavigation items={navItems} />
+            <SideNavigation items={navItems as any} />
           </div>
           <div className="md:col-span-3">
             <motion.section id="introduction" {...fadeIn}>
@@ -60,7 +60,7 @@ export default function ScheduledOrdersPage() {
 
             <motion.section id="key-features" {...fadeIn}>
               <h2 className="text-3xl font-semibold mb-6 text-[#FD8000] dark:text-[#FFA500]">
-                {t("keyFeatures.title")}
+                {t("nav.keyFeatures")}
               </h2>
 
               {["recurringOrders", "flexibleScheduling", "customization"].map(
@@ -89,9 +89,12 @@ export default function ScheduledOrdersPage() {
                 {t("howItWorks.title")}
               </h2>
               <ol className="list-decimal list-inside space-y-4 mb-8 text-gray-600 dark:text-gray-300">
-                {t.rich("howItWorks.steps", {
-                  li: (chunk) => <li>{chunk}</li>,
-                })}
+                <li>{t("howItWorks.step1")}</li>
+                <li>{t("howItWorks.step2")}</li>
+                <li>{t("howItWorks.step3")}</li>
+                <li>{t("howItWorks.step4")}</li>
+                <li>{t("howItWorks.step5")}</li>
+                <li>{t("howItWorks.step6")}</li>
               </ol>
               <Image
                 src="/placeholder.svg?height=400&width=600"
@@ -107,9 +110,12 @@ export default function ScheduledOrdersPage() {
                 {t("benefits.title")}
               </h2>
               <ul className="list-disc list-inside space-y-4 mb-8 text-gray-600 dark:text-gray-300">
-                {t.rich("benefits.list", {
-                  li: (chunk) => <li>{chunk}</li>,
-                })}
+                <li>{t("benefits.item1")}</li>
+                <li>{t("benefits.item2")}</li>
+                <li>{t("benefits.item3")}</li>
+                <li>{t("benefits.item4")}</li>
+                <li>{t("benefits.item5")}</li>
+                <li>{t("benefits.item6")}</li>
               </ul>
               <Image
                 src="/placeholder.svg?height=400&width=600"

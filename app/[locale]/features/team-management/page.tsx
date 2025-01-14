@@ -11,9 +11,9 @@ export default function TeamManagementPage() {
 
   const navItems = [
     { id: "introduction", title: t("nav.introduction") },
-    { id: "key-features", title: t("nav.keyFeatures") },
     {
       id: "key-features",
+      title: t("nav.keyFeatures"),
       subItems: [
         { id: "group-ordering", title: t("nav.groupOrdering") },
         { id: "dietary-management", title: t("nav.dietaryManagement") },
@@ -60,7 +60,7 @@ export default function TeamManagementPage() {
 
             <motion.section id="key-features" {...fadeIn}>
               <h2 className="text-3xl font-semibold mb-6 text-[#FD8000] dark:text-[#FFA500]">
-                {t("keyFeatures.title")}
+                {t("nav.keyFeatures")}
               </h2>
 
               {["groupOrdering", "dietaryManagement", "budgetControl"].map(
@@ -89,9 +89,9 @@ export default function TeamManagementPage() {
                 {t("howItWorks.title")}
               </h2>
               <ol className="list-decimal list-inside space-y-4 mb-8 text-gray-600 dark:text-gray-300">
-                {t.rich("howItWorks.steps", {
-                  li: (chunk) => <li>{chunk}</li>,
-                })}
+                {[...(Array(5).keys() as any)].map((step) => (
+                  <li key={step}>{t(`howItWorks.step${step + 1}`)}</li>
+                ))}
               </ol>
               <Image
                 src="/placeholder.svg?height=400&width=600"
@@ -107,9 +107,9 @@ export default function TeamManagementPage() {
                 {t("benefits.title")}
               </h2>
               <ul className="list-disc list-inside space-y-4 mb-8 text-gray-600 dark:text-gray-300">
-                {t.rich("benefits.list", {
-                  li: (chunk) => <li>{chunk}</li>,
-                })}
+                {[...(Array(5).keys() as any)].map((item) => (
+                  <li key={item}>{t(`benefits.item${item + 1}`)}</li>
+                ))}
               </ul>
               <Image
                 src="/placeholder.svg?height=400&width=600"

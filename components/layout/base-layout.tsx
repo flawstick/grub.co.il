@@ -24,7 +24,10 @@ export async function BaseLayout({ children, locale }: Props) {
 
   return (
     <html className="h-full" lang={locale}>
-      <body className={clsx(fredoka.className, "flex h-full flex-col")}>
+      <body
+        className={clsx(fredoka.className, "flex h-full flex-col")}
+        dir="ltr"
+      >
         <NextIntlClientProvider messages={messages}>
           <Navigation />
           {children}

@@ -103,9 +103,11 @@ export default function IntegratedPayrollDeductionsPage() {
                 {t("howItWorks.title")}
               </h2>
               <ol className="list-decimal list-inside space-y-4 mb-8 text-gray-600 dark:text-gray-300">
-                {t.rich("howItWorks.steps", {
-                  li: (chunk) => <li>{chunk}</li>,
-                })}
+                <li>{t("howItWorks.step1")}</li>
+                <li>{t("howItWorks.step2")}</li>
+                <li>{t("howItWorks.step3")}</li>
+                <li>{t("howItWorks.step4")}</li>
+                <li>{t("howItWorks.step5")}</li>
               </ol>
               <Image
                 src="/placeholder.svg?height=400&width=600"
@@ -124,9 +126,10 @@ export default function IntegratedPayrollDeductionsPage() {
                 {t("security.description")}
               </p>
               <ul className="list-disc list-inside space-y-4 mb-8 text-gray-600 dark:text-gray-300">
-                {t.rich("security.items", {
-                  li: (chunk) => <li>{chunk}</li>,
-                })}
+                <li>{t("security.item1")}</li>
+                <li>{t("security.item2")}</li>
+                <li>{t("security.item3")}</li>
+                <li>{t("security.item4")}</li>
               </ul>
               <Image
                 src="/placeholder.svg?height=400&width=600"

@@ -101,9 +101,12 @@ export default function CustomizableMenusPage() {
                 {t("howItWorks.title")}
               </h2>
               <ol className="list-decimal list-inside space-y-4 mb-8 text-gray-600 dark:text-gray-300">
-                {t.rich("howItWorks.steps", {
-                  li: (chunk) => <li>{chunk}</li>,
-                })}
+                <li>{t("howItWorks.step1")}</li>
+                <li>{t("howItWorks.step2")}</li>
+                <li>{t("howItWorks.step3")}</li>
+                <li>{t("howItWorks.step4")}</li>
+                <li>{t("howItWorks.step5")}</li>
+                <li>{t("howItWorks.step6")}</li>
               </ol>
               <Image
                 src="/placeholder.svg?height=400&width=600"
@@ -119,9 +122,12 @@ export default function CustomizableMenusPage() {
                 {t("benefits.title")}
               </h2>
               <ul className="list-disc list-inside space-y-4 mb-8 text-gray-600 dark:text-gray-300">
-                {t.rich("benefits.items", {
-                  li: (chunk) => <li>{chunk}</li>,
-                })}
+                <li>{t("benefits.item1")}</li>
+                <li>{t("benefits.item2")}</li>
+                <li>{t("benefits.item3")}</li>
+                <li>{t("benefits.item4")}</li>
+                <li>{t("benefits.item5")}</li>
+                <li>{t("benefits.item6")}</li>
               </ul>
               <Image
                 src="/placeholder.svg?height=400&width=600"
