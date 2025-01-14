@@ -14,17 +14,23 @@ const routes = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return routes.map(getEntry);
+  return routing.locales.flatMap((locale) =>
+    routes.map((href) => getEntry(href, locale)),
+  );
 }
 
 type Href = Parameters<typeof getPathname>[0]["href"];
 
-function getEntry(href: Href) {
+function getEntry(href: Href, locale: Locale) {
+  const url = getUrl(href, locale);
   return {
-    url: getUrl(href, routing.defaultLocale), // Default locale URL (Hebrew)
+    url, // URL for the specific locale
     alternates: {
       languages: Object.fromEntries(
-        routing.locales.map((locale) => [locale, getUrl(href, locale)]),
+        routing.locales.map((alternateLocale) => [
+          alternateLocale,
+          getUrl(href, alternateLocale),
+        ]),
       ),
     },
   };
@@ -32,5 +38,5 @@ function getEntry(href: Href) {
 
 function getUrl(href: Href, locale: Locale) {
   const pathname = getPathname({ locale, href });
-  return `https://grub.co.il${pathname}`;
+  return `https://www.grub.co.il${pathname}`;
 }
