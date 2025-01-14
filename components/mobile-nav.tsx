@@ -114,7 +114,7 @@ export function MobileNav() {
   ];
 
   useEffect(() => {
-    let initialOpenState = navItems.reduce(
+    const initialOpenState = navItems.reduce(
       (acc, item) => {
         if (item.subItems) {
           acc[item.title] = true;
